@@ -4,7 +4,7 @@
     <div class="index-body">
       <!--列表-->
       <div>
-        <div class="index-model-one" v-for="(item,index) in mainList" :key="index">
+        <div class="index-model-one" @click="toPage(item)" v-for="(item,index) in mainList" :key="index">
           <div class="index-model-l">
             <img class="index-model-l-img" :src="item.img"/>
           </div>
@@ -62,6 +62,16 @@
       // 清除背景图
       clearBodyBackGround () {
         document.body.style.backgroundImage = ''
+      },
+      // 调转页面
+      toPage(item) {
+        switch (item.id) {
+          case '1':
+            this.$router.push({name:'login'})
+            return
+          default:
+            return;
+        }
       }
     },
     mounted(){
