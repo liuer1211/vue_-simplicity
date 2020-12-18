@@ -3,8 +3,10 @@
     2.启动服务 npm run dev 或 yarn start
     3.打包 npm run build 或 yarn build
     4.检查需要优化模块 npm run build --report
+    
 # 访问
    [vue练习,点我访问](https://liuer1211.github.io/vue_-simplicity/dist/#/)
+   
 # 学习，问题，注意点
     1.打包
     build: {
@@ -17,7 +19,16 @@
       test: /\.less$/,
       loader: 'style-loader!css-loader!less-loader'
     }
-
+    3.使用mock数据
+    下载依赖 npm install mockjs --save
+    引用 import './mock/mockServer'
+    提供接口 
+      export const reqHaHa = () => ajax('/haha')
+      Mock.mock('/haha', {code:1, data: data.haha})
+    直接使用 import {reqMainList} from '../../api/index'
+    4.使用vuex
+    5.使用路由缓存
+    6.使用路由守卫
 # github
     1.创建项目,上传
     echo "# vue_-simplicity" >> README.md

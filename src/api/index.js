@@ -5,3 +5,6 @@ import ajax from './ajax'
 
 // main  获得列表
 export const reqMainList = () => ajax('/mainList')
+
+//
+export const reqHaHa = () => ajax('/haha')

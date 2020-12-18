@@ -49,8 +49,28 @@
       async getInit(){
         let data = await reqMainList()
         this.mainList = data.data.data
-        console.log(data)
+        // console.log(data)
+      },
+      // 添加body图片
+      setBodyBackGround () {
+        document.body.style.backgroundSize = 'cover'
+        document.body.style.backgroundPosition = 'center center'
+        document.body.style.backgroundRepeat = 'no-repeat'
+        document.body.style.backgroundAttachment = 'fixed'
+        document.body.style.backgroundImage = 'url(' + require('../../assets/img/main/bg1.jpg') + ')'
+      },
+      // 清除背景图
+      clearBodyBackGround () {
+        document.body.style.backgroundImage = ''
       }
+    },
+    mounted(){
+      // 进来的时候调用添加
+      this.setBodyBackGround()
+    },
+    beforeDestroy(){
+      // 离开页面的时候清除
+      this.clearBodyBackGround()
     }
   }
 </script>
