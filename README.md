@@ -4,7 +4,7 @@
     3.打包 npm run build 或 yarn build
     4.检查需要优化模块 npm run build --report
 # 访问
-   [vue练习](https://liuxingsumeng.github.io/-vue-noval/dist/#/)
+   [vue练习,点我访问](https://liuer1211.github.io/vue_-simplicity/dist/#/)
 # 学习，问题，注意点
     1.打包
     build: {
@@ -17,7 +17,6 @@
       test: /\.less$/,
       loader: 'style-loader!css-loader!less-loader'
     }
-# 部分页面
 
 # github
     1.创建项目,上传
@@ -28,7 +27,13 @@
     git branch -M main
     git remote add origin git@github.com:liuer1211/vue_-simplicity.git
     git push -u origin main
-    2.使用github自带上传工具：GitHub Desktop
-   ![image.png](https://liuer1211.github.io/vue_shop/static/img/7.png)
-    3.github项目设置网上访问权限
     
+    2.使用github自带上传工具：GitHub Desktop
+   ![image.png](https://liuer1211.github.io/vue_-simplicity/static/img/1.png)
+   
+    3.github项目设置网上访问权限
+   ![image.png](https://liuer1211.github.io/vue_-simplicity/static/img/2.png)
+   ![image.png](https://liuer1211.github.io/vue_-simplicity/static/img/3.png)
+   
+# 部分页面
+   ![image.png](https://liuer1211.github.io/vue_-simplicity/static/img/4.png)
