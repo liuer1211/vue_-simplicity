@@ -48,3 +48,4 @@
    
 # 部分页面
    ![image.png](https://liuer1211.github.io/vue_-simplicity/static/img/4.png)
+   ![image.png](https://liuer1211.github.io/vue_-simplicity/static/img/5.png)
