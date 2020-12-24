@@ -9,7 +9,7 @@
               <div class="swiper-model" v-for="(item, index) in swiperListitem" :key="index">
                 <div class="swiper-model-up">
                   <div class="swiper-model-bg">
-                    <i class="sw-icon" :class="item.icon"></i>
+                    <i class="sw-icon" >图</i> <!--:class="item.icon"-->
                   </div>
                 </div>
                 <div class="swiper-model-bot">{{item.name}}</div>
@@ -148,6 +148,7 @@
               align-items: center;
               justify-content: center;
               .sw-icon{
+                font-style: initial;
                 color: #ccd720;
               }
             }
