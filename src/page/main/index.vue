@@ -1,10 +1,10 @@
 <template>
   <div class="index-main">
-    <Search></Search>
+    <Search :seaActive="seaActive" @getCodeChildren="getCodeParent"></Search>
     <div class="index-body">
       <!--列表-->
       <div>
-        <div class="index-model-one" @click="toPage(item)" v-for="(item,index) in mainList" :key="index">
+        <div class="index-model-one upToBottom" @click="toPage(item)" v-for="(item,index) in mainList" :key="index">
           <div class="index-model-l">
             <img class="index-model-l-img" :src="item.img"/>
           </div>
@@ -15,7 +15,7 @@
         </div>
       </div>
       <!--列表-->
-      <div>
+      <!--<div>
         <div class="index-model-two">
           <div class="index-model-up">
             <img class="index-model-up-img"/>
@@ -23,7 +23,7 @@
           </div>
           <p class="index-model-do"></p>
         </div>
-      </div>
+      </div>-->
     </div>
   </div>
 </template>
@@ -37,7 +37,8 @@
     },
     data () {
       return {
-        mainList:[]
+        seaActive: 'search-bg',
+        mainList: []
       }
     },
     created() {
@@ -45,7 +46,7 @@
       this.getInit()
     },
     methods:{
-      // 获得列表
+      // 获得列表，这里先不用vuex管理
       async getInit(){
         let data = await reqMainList()
         this.mainList = data.data.data
@@ -57,7 +58,7 @@
         document.body.style.backgroundPosition = 'center center'
         document.body.style.backgroundRepeat = 'no-repeat'
         document.body.style.backgroundAttachment = 'fixed'
-        document.body.style.backgroundImage = 'url(' + require('../../assets/img/main/bg1.jpg') + ')'
+        document.body.style.backgroundImage = 'url(' + require('../../assets/img/main/bg8.jpg') + ')'
       },
       // 清除背景图
       clearBodyBackGround () {
@@ -69,9 +70,16 @@
           case '1':
             this.$router.push({name:'login'})
             return
+          case '2':
+            this.$router.push({name:'swiper'})
+            return
           default:
             return;
         }
+      },
+      // 子传父数据，通过方法
+      getCodeParent(data) {
+        this.mainList=data
       }
     },
     mounted(){
@@ -89,7 +97,8 @@
   .index-main{
     color: #fff;
     .index-body{
-      padding: 0 0.6rem 0.6rem 0.6rem;
+      margin: 4rem 0 0;
+      padding: 0 1rem 1rem;
       .index-model-one{
         display: -webkit-box;
         display: -ms-flexbox;
@@ -101,14 +110,14 @@
         border-radius: 0.3rem;
         overflow: hidden;
         &:not(:last-child){
-          margin: 0 0 0.6rem 0;
+          margin: 0 0 1rem 0;
         }
         .index-model-l{
           margin: 0 0.6rem 0 0;
           .index-model-l-img{
-            width: 3rem;
-            min-width: 3rem;
-            height: 3rem;
+            width: 4.5rem;
+            min-width: 4.5rem;
+            height: 4.5rem;
             display: block;
             object-fit: cover;
           }
@@ -118,7 +127,7 @@
           flex: 1;
           width: 8rem;
           h2{
-            margin: 0 0 0.3rem 0;
+            margin: 0 0 0.5rem 0;
             font-size: 0.8rem;
           }
           .index-model-r-info{
@@ -142,5 +151,25 @@
       text-overflow: ellipsis;
       white-space: nowrap;
     }
+    /*上到下  渐变*/
+    .upToBottom{
+      animation:upToBottom 2s ;
+      -webkit-animation:upToBottom 2s ; /*Safari and Chrome*/
+    }
+    @keyframes upToBottom
+    {
+      /*from {top:-10px;}!*执行动画的初始位置*!
+      to {top:0;}!*动画结束位置*!*/
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+    @-webkit-keyframes upToBottom /*Safari and Chrome*/
+    {
+     /* from {top:-10px;}!*执行动画的初始位置*!
+      to {top:0;}!*动画结束位置*!*/
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+
   }
 </style>

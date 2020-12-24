@@ -8,5 +8,5 @@ import data from './data.json'
 Mock.mock('/mainList', {code:1, data: data.mainList})
 
 // 例子
-Mock.mock('/haha', {code:1, data: data.haha})
+Mock.mock('/swiperList', {code:1, data: data.swiperList})
 

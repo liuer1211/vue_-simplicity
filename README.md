@@ -47,5 +47,6 @@
    ![image.png](https://liuer1211.github.io/vue_-simplicity/static/img/3.png)
    
 # 部分页面
-   ![image.png](https://liuer1211.github.io/vue_-simplicity/static/img/4.png)
+   ![image.png](https://liuer1211.github.io/vue_-simplicity/static/img/6.png)
    ![image.png](https://liuer1211.github.io/vue_-simplicity/static/img/5.png)
+   ![image.png](https://liuer1211.github.io/vue_-simplicity/static/img/7.png)

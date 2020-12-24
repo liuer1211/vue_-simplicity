@@ -6,5 +6,5 @@ import ajax from './ajax'
 // main  获得列表
 export const reqMainList = () => ajax('/mainList')
 
-//
-export const reqHaHa = () => ajax('/haha')
+// swiper 九宫格列表
+export const reqSwiperList = () => ajax('/swiperList')

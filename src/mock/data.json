@@ -3,39 +3,96 @@
     {
       "id" : "1",
       "img": "https://cn.bing.com/th?id=OHR.NarniaForest_ZH-CN8466850438_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
-      "tit": "沧海一声笑",
-      "cen": "滚石音乐，经典永流传"
+      "tit": "登陆",
+      "cen": "极简风格"
     },
     {
       "id" : "2",
-      "img": "https://cn.bing.com/th?id=OHR.MunnarMist_ZH-CN8816703625_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
-      "tit": "沧海一声笑",
-      "cen": "滚石音乐，经典永流传"
+      "img": "https://cn.bing.com/th?id=OHR.HolidayNubble_ZH-CN8122183595_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+      "tit": "九宫格",
+      "cen": "极简风格"
     },
     {
       "id" : "3",
-      "img": "https://cn.bing.com/th?id=OHR.ElbeBastei_ZH-CN9708654240_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
-      "tit": "沧海一声笑",
-      "cen": "滚石音乐，经典永流传"
+      "img": "https://cn.bing.com/th?id=OHR.BabyGoat_ZH-CN7863798344_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+      "tit": "置顶",
+      "cen": "极简风格"
     },
     {
       "id" : "4",
-      "img": "https://cn.bing.com/th?id=OHR.PineGrosbeak_ZH-CN9629000282_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
-      "tit": "沧海一声笑",
-      "cen": "滚石音乐，经典永流传"
+      "img": "https://cn.bing.com/th?id=OHR.TreCime_ZH-CN7609469681_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+      "tit": "下拉加载",
+      "cen": "极简风格"
     },
     {
       "id" : "5",
       "img": "https://cn.bing.com/th?id=OHR.PolarExpress_ZH-CN9522496479_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
-      "tit": "沧海一声笑",
-      "cen": "滚石音乐，经典永流传"
+      "tit": "图表",
+      "cen": "极简风格"
     },
     {
       "id" : "6",
       "img": "https://cn.bing.com/th?id=OHR.QueenoftheAndes_ZH-CN9019108680_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
-      "tit": "沧海一声笑",
-      "cen": "滚石音乐，经典永流传"
+      "tit": "新闻",
+      "cen": "极简风格"
     }
   ],
-  "haha": []
+  "swiperList": [
+    {
+      "name": "phone",
+      "icon": "el-icon-phone"
+    },
+    {
+      "name": "star",
+      "icon": "el-icon-star-on"
+    },
+    {
+      "name": "picture",
+      "icon": "el-icon-picture"
+    },
+    {
+      "name": "goods",
+      "icon": "el-icon-s-goods"
+    },
+    {
+      "name": "camera",
+      "icon": "el-icon-video-camera-solid"
+    },
+    {
+      "name": "solid",
+      "icon": "el-icon-message-solid"
+    },
+    {
+      "name": "promotion",
+      "icon": "el-icon-s-promotion"
+    },
+    {
+      "name": "check",
+      "icon": "el-icon-s-check"
+    },
+    {
+      "name": "share",
+      "icon": "el-icon-share"
+    },
+    {
+      "name": "flag",
+      "icon": "el-icon-s-flag"
+    },
+    {
+      "name": "marketing",
+      "icon": "el-icon-s-marketing"
+    },
+    {
+      "name": "release",
+      "icon": "el-icon-s-release"
+    },
+    {
+      "name": "platform",
+      "icon": "el-icon-s-platform"
+    },
+    {
+      "name": "upload",
+      "icon": "el-icon-upload"
+    }
+  ]
 }
