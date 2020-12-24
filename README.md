@@ -29,6 +29,9 @@
     4.使用vuex
     5.使用路由缓存
     6.使用路由守卫
+    7.使用swiper
+    8.使用组件
+    9.使用element-ui
 # github
     1.创建项目,上传
     echo "# vue_-simplicity" >> README.md
