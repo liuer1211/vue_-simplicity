@@ -23,6 +23,6 @@ export default {
     /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
     background-attachment: fixed;
     /* 让背景图基于容器大小伸缩 */
-    /*background-size: cover;*/
+    background-size: cover;
   }
 </style>
