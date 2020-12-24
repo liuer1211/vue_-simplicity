@@ -66,6 +66,9 @@
           case '2':
             this.$router.push({name:'swiper'})
             return
+          case '4':
+            this.$router.push({name:'dropDown'})
+            return
           default:
             return;
         }
