@@ -15,7 +15,7 @@ export default {
     font-size: 20px;
   }
   body{
-    background-image: url("assets/img/main/bg8.jpg");
+    background-image: url("./assets/img/main/bg8.jpg");
     /* 背景图垂直、水平均居中 */
     background-position: center center;
     /* 背景图不平铺 */
