@@ -3,7 +3,7 @@
     <Search :seaActive="seaActive" @getCodeChildren="getCodeParent"></Search>
     <div class="index-body">
       <!--列表-->
-      <div>
+      <div v-if="mainList.length>0">
         <div class="index-model-one upToBottom" @click="toPage(item)" v-for="(item,index) in mainList" :key="index">
           <div class="index-model-l">
             <img class="index-model-l-img" :src="item.img"/>
@@ -11,8 +11,12 @@
           <div class="index-model-r">
             <h2 class="over-font">{{item.tit}}</h2>
             <p class="index-model-r-info over-font">{{item.cen}}</p>
+            <div class="index-start"><Start :score="item.score"></Start></div>
           </div>
         </div>
+      </div>
+      <div class="index-nodata" v-else>
+        <!--空空如也-->
       </div>
       <!--列表-->
       <!--<div>
@@ -31,14 +35,15 @@
 <script>
   import {reqMainList} from '../../api/index'
   import Search from '../../components/search/search'
+  import Start from '../../components/start/start'
   export default {
     components:{
-      Search
+      Search, Start
     },
     data () {
       return {
-        seaActive: 'search-bg',
-        mainList: []
+        seaActive: 'search-bg', // 选择背景色
+        mainList: [] // 列表数据
       }
     },
     created() {
@@ -54,11 +59,11 @@
       },
       // 添加body图片
       setBodyBackGround () {
-        document.body.style.backgroundSize = 'cover'
+        document.body.style.backgroundImage = 'url(' + require('../../assets/img/main/bg8.jpg') + ')'
+        document.body.style.backgroundSize = '100% 100%'
         document.body.style.backgroundPosition = 'center center'
         document.body.style.backgroundRepeat = 'no-repeat'
         document.body.style.backgroundAttachment = 'fixed'
-        document.body.style.backgroundImage = 'url(' + require('../../assets/img/main/bg8.jpg') + ')'
       },
       // 清除背景图
       clearBodyBackGround () {
@@ -106,9 +111,10 @@
         width: 100%;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
-        border: 0.02rem solid #fff;
+        border: 0.03rem solid #fff;
         border-radius: 0.3rem;
         overflow: hidden;
+        background: #0000001f;
         &:not(:last-child){
           margin: 0 0 1rem 0;
         }
@@ -134,6 +140,9 @@
             margin: 0;
             font-size: 0.7rem;
           }
+          .index-start{
+            margin-top: 0.3rem;
+          }
         }
       }
       .index-model-two{
@@ -144,6 +153,14 @@
         .index-model-do{
 
         }
+      }
+      .index-nodata{
+        font-size: 2rem;
+        color: #d9d9d9;
+        font-family: cursive;
+        padding-top: 1rem;
+        writing-mode: tb-rl;
+        margin: 0 auto;
       }
     }
     .over-font{

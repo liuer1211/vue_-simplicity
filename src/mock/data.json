@@ -4,37 +4,43 @@
       "id" : "1",
       "img": "https://cn.bing.com/th?id=OHR.NarniaForest_ZH-CN8466850438_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
       "tit": "登陆",
-      "cen": "极简风格"
+      "cen": "极简风格",
+      "score": 5
     },
     {
       "id" : "2",
       "img": "https://cn.bing.com/th?id=OHR.HolidayNubble_ZH-CN8122183595_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
       "tit": "九宫格",
-      "cen": "极简风格"
+      "cen": "极简风格",
+      "score": 4
     },
     {
       "id" : "3",
       "img": "https://cn.bing.com/th?id=OHR.BabyGoat_ZH-CN7863798344_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
       "tit": "置顶",
-      "cen": "极简风格"
+      "cen": "极简风格",
+      "score": 3.2
     },
     {
       "id" : "4",
       "img": "https://cn.bing.com/th?id=OHR.TreCime_ZH-CN7609469681_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
       "tit": "下拉加载",
-      "cen": "极简风格"
+      "cen": "极简风格",
+      "score": 2.5
     },
     {
       "id" : "5",
       "img": "https://cn.bing.com/th?id=OHR.PolarExpress_ZH-CN9522496479_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
       "tit": "图表",
-      "cen": "极简风格"
+      "cen": "极简风格",
+      "score": 2.9
     },
     {
       "id" : "6",
       "img": "https://cn.bing.com/th?id=OHR.QueenoftheAndes_ZH-CN9019108680_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
       "tit": "新闻",
-      "cen": "极简风格"
+      "cen": "极简风格",
+      "score": 4.1
     }
   ],
   "swiperList": [
