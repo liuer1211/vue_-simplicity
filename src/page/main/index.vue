@@ -57,18 +57,6 @@
         this.mainList = data.data.data
         // console.log(data)
       },
-      // 添加body图片
-      setBodyBackGround () {
-        document.body.style.backgroundImage = 'url(' + require('../../assets/img/main/bg8.jpg') + ')'
-        document.body.style.backgroundSize = '100% 100%'
-        document.body.style.backgroundPosition = 'center center'
-        document.body.style.backgroundRepeat = 'no-repeat'
-        document.body.style.backgroundAttachment = 'fixed'
-      },
-      // 清除背景图
-      clearBodyBackGround () {
-        document.body.style.backgroundImage = ''
-      },
       // 调转页面
       toPage(item) {
         switch (item.id) {
@@ -88,12 +76,8 @@
       }
     },
     mounted(){
-      // 进来的时候调用添加
-      this.setBodyBackGround()
     },
     beforeDestroy(){
-      // 离开页面的时候清除
-      this.clearBodyBackGround()
     }
   }
 </script>

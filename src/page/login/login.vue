@@ -26,7 +26,6 @@
       // 设置背景
       setBodyBackGround () {
         document.body.style.background = '#353434'
-        document.body.style.backgroundImage = ''
       },
       // 清除背景
       clearBodyBackGround () {
