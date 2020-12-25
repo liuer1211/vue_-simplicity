@@ -66,16 +66,30 @@
           case '2':
             this.$router.push({name:'swiper'})
             return
+          case '3':
+            this.getTip()
+            return
           case '4':
             this.$router.push({name:'dropDown'})
             return
           default:
+            this.getTip()
             return;
         }
       },
       // 子传父数据，通过方法
       getCodeParent(data) {
         this.mainList=data
+      },
+      // 通知
+      getTip(){
+        this.$message({
+          message: '暂未开通！',
+          type: 'warning',
+          duration: '2000',
+          center: true,
+          offset: 30,
+        });
       }
     },
     mounted(){
