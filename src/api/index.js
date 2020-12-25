@@ -8,3 +8,7 @@ export const reqMainList = () => ajax('/mainList')
 
 // swiper 九宫格列表
 export const reqSwiperList = () => ajax('/swiperList')
+
+// 新闻列表
+export const reqNewsList = () => ajax('/newsList')
+
