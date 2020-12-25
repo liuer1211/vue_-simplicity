@@ -124,10 +124,10 @@
                   background-repeat: no-repeat;
                   background-size: cover;
                   &.hot0{
-                    background-image: url("../../assets/img/common/hot.png");
+                    background-image: url("https://liuer1211.github.io/vue_-simplicity/static/img/model/hot.png");
                   }
                   &.hot1{
-                    background-image: url("../../assets/img/common/hot.png");
+                    background-image: url("https://liuer1211.github.io/vue_-simplicity/static/img/model/hot.png");
                   }
                 }
               }
