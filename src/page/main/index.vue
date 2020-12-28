@@ -67,7 +67,7 @@
             this.$router.push({name:'swiper'})
             return
           case '3':
-            this.getTip()
+            this.$router.push({name:'top1'})
             return
           case '4':
             this.$router.push({name:'dropDown'})
