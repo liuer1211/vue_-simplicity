@@ -24,26 +24,33 @@
     {
       "id" : "4",
       "img": "https://cn.bing.com/th?id=OHR.TreCime_ZH-CN7609469681_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
-      "tit": "下拉加载",
+      "tit": "无限滚动",
       "cen": "极简风格",
       "score": 2.5
     },
     {
       "id" : "5",
+      "img": "https://cn.bing.com/th?id=OHR.TreCime_ZH-CN7609469681_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+      "tit": "下拉刷新,上拉加载",
+      "cen": "极简风格",
+      "score": 2.5
+    },
+    {
+      "id" : "6",
       "img": "https://cn.bing.com/th?id=OHR.PolarExpress_ZH-CN9522496479_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
       "tit": "图表",
       "cen": "极简风格",
       "score": 2.9
     },
     {
-      "id" : "6",
+      "id" : "7",
       "img": "https://cn.bing.com/th?id=OHR.QueenoftheAndes_ZH-CN9019108680_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
       "tit": "新闻",
       "cen": "极简风格",
       "score": 4.1
     },
     {
-      "id" : "7",
+      "id" : "8",
       "img": "https://cn.bing.com/th?id=OHR.WildReindeer_ZH-CN8301029606_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
       "tit": "列表",
       "cen": "极简风格",

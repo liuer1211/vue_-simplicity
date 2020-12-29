@@ -6,13 +6,18 @@ import App from './App'
 import router from './router'
 import store from './store'
 
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+import infiniteScroll from 'vue-infinite-scroll'
+import VueScroller from 'vue-scroller'
 
 import 'normalize.css/normalize.css'
 import './mock/mockServer' // 加载mockServer即可
 
-Vue.use(ElementUI);
+
+Vue.use(ElementUI)
+Vue.use(infiniteScroll)
+Vue.use(VueScroller)
 
 Vue.config.productionTip = false
 

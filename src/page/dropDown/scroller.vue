@@ -1,7 +1,7 @@
 <template>
   <div class="dropDown-main">
     <div class="drop-main" >
-      <div class="drop-main-flex"  v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
+      <div class="drop-main-flex" :on-refresh="refresh" :on-infinite="infinite" ref="myscroller" >
         <div class="drop-model" v-for="(item, index) in newsList" :key="index">
           <div class="drop-model-p">
             <div class="drop-model-up">
@@ -21,7 +21,6 @@
       </div>
     </div>
     <!--加载中-->
-    <div class="drop-loading" v-show="busy">加载中...</div>
     <!--无数据-->
     <div class="drop-loading" v-show="noDatas">已经到底了</div>
     <!--回到顶部-->
@@ -31,11 +30,18 @@
 
 <script>
   import { mapState, mapActions } from 'vuex'
+  import {reqMainList} from '../../api/index'
   export default {
     data () {
       return {
-        busy: false,
-        noDatas: false
+        noDatas: false,
+        noDate:false,//判断是否加载
+        data:{
+          keyWord:'',
+          pageIndex:1,
+          pageSize:50,
+          status:'',
+        }
       }
     },
     computed:{
@@ -45,25 +51,56 @@
     methods: {
       // 获得新闻数据，调方法
       ...mapActions(['getNewsList']),
-      loadMore() {
-        if (this.newsList.length < 25){
-          this.busy = true
-          setTimeout(() => {
-            for(let i=0; i<5; i++){
-              this.newsList.push(this.newsList[i])
-            }
-            this.busy = false
-          }, 1000)
-        } else {
-          this.noDatas = true
-        }
-      }
+      // 下拉刷新
+    　　refresh(){
+       　　let _this=this;
+       　　_this.data.pageIndex=1;      //重置页数刷新每次页数都是第一页
+       　　_this.noDate=false;          //重置数据判断
+       　　_this.qryNoticeList();
+   　　},
+      // 上拉加载
+      infinite(done){
+      　　let _this=this;
+         setTimeout(() => {
+             if(_this.noDate){
+                 _this.$refs.myscroller.finishInfinite(true);
+                 //finishInfinite函数为scroller实例的方法，当参数为false时，上拉获取数据可以重新调用。
+               // 当参数为true，上拉获取数据回调函数停止使用,下拉下部不再显示loading，会显示‘’暂无更多数据
+             }else{
+                 _this.data.pageIndex++;
+                 _this.qryNoticeList(done);
+
+             }
+         }, 1000);
+      },
+      //获取重要通知列表
+     qryNoticeList(done){
+         let _this=this;
+         reqMainList().then((response)=>{
+             //停止下拉刷新
+             _this.$refs.myscroller.finishPullToRefresh();
+     //         if (response.code === 1){
+     // 　　　　　if(typeof (done)=="function"){
+     //             done();
+     //           }
+     //           if(response.data.haveNextPage=='0'){
+     //               _this.noDate=true;
+     //           }else{
+     //               _this.noDate=false;
+     //          }
+     //           // 判断是下拉刷新还是上拉加载
+     //           if(_this.data.pageIndex==1){
+     //               _this.notilist = response.data.list;
+     //           }else{
+     //               _this.notilist=_this.notilist.concat(response.data.list);
+     //           }
+     //         }
+         });
+     　}
     },
     mounted(){
       // 获得新闻数据，调方法
-      this.getNewsList()
-    },
-    beforeDestroy(){
+      this.qryNoticeList()
     }
   }
 </script>
@@ -177,16 +214,3 @@
   }
 </style>
 
-<!--
-v-infinite-scroll="loadMore"表示回调函数是loadMore
-infinite-scroll-disabled="busy"表示由变量busy决定是否执行loadMore，false则执行loadMore，true则不执行，
-看清楚，busy表示繁忙，繁忙的时候是不执行的。
-infinite-scroll-distance="10"这里10决定了页面滚动到离页尾多少像素的时候触发回调函数，10是像素值。
-通常我们会在页尾做一个几十像素高的“正在加载中...”，这样的话，可以把这个div的高度设为infinite-scroll-distance的值即可。
-其他选项：
-infinite-scroll-immediate-check 默认值为true，该指令意思是，应该在绑定后立即检查busy的值和是否滚动到底。
-如果你的初始内容高度不够高、不足以填满可滚动的容器的话，你应设为true，这样会立即执行一次loadMore，会帮你填充一些初始内容。
-infinite-scroll-listen-for-event 当事件在Vue实例中发出时，无限滚动将再次检查。
-infinite-scroll-throttle-delay 检查busy的值的时间间隔，默认值是200，因为vue-infinite-scroll的基础原理就是，
-vue-infinite-scroll会循环检查busy的值，以及是否滚动到底，只有当：busy为false且滚动到底，回调函数才会执行。
--->

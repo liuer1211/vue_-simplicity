@@ -72,6 +72,9 @@
           case '4':
             this.$router.push({name:'dropDown'})
             return
+          case '5':
+            this.$router.push({name:'scroller'})
+            return
           default:
             this.getTip()
             return;
@@ -171,8 +174,8 @@
     }
     /*上到下  渐变*/
     .upToBottom{
-      animation:upToBottom 2s ;
-      -webkit-animation:upToBottom 2s ; /*Safari and Chrome*/
+      animation:upToBottom 1s ;
+      -webkit-animation:upToBottom 1s ; /*Safari and Chrome*/
     }
     @keyframes upToBottom
     {
