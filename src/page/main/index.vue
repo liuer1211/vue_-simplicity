@@ -72,8 +72,14 @@
           case '4':
             this.$router.push({name:'dropDown'})
             return
-          case '5':
+          case '5.1':
             this.$router.push({name:'scroller'})
+            return
+          case '5.2':
+            this.$router.push({name:'mescroll'})
+            return
+          case '9':
+            this.$router.push({name:'map'})
             return
           default:
             this.getTip()

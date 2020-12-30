@@ -15,6 +15,7 @@
 </template>
 
 <script>
+  import {eleUtil} from '@/assets/js/util'
   export default {
     data () {
       return {
@@ -34,7 +35,8 @@
       // 登陆
       toLogin() {
         if (this.userName==='') {
-          this.getTip('error','用户名不能为空!')
+          eleUtil.toChangeTip('error','用户名不能为空!')
+          // this.getTip('error','用户名不能为空!')
           return
         }
         if (this.userPassword==='') {

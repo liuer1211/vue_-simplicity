@@ -17,3 +17,18 @@ export const dateUtil = {
     return date.getFullYear() + '-' + MM + '-' + DD;
   }
 }
+
+// element-ui 更改工具类
+export const eleUtil = {
+  // 提示框
+  // this.toChangeTip('error','密码不能为空!')
+  toChangeTip(data1 = 'error', data2 = '', data3 = '2000', data4 = true, data5 = '30'){
+    this.$message({
+      type: data1, // 类型
+      message: data2, // 内容
+      duration: data3, // 豪秒
+      center: data4, // is居中
+      offset: data5 // 距顶 px
+    });
+  }
+}
