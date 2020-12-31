@@ -4,7 +4,8 @@ import Router from 'vue-router'
 import Index from '@/page/main/index' // 首页
 import Login from '@/page/login/login' // 登陆
 import Swiper from '@/page/swiper/swiper' // 九宫格
-import Top1 from '@/page/top/top1' // 下拉加载
+import Top1 from '@/page/top/top1' // 吸顶1
+import Top2 from '@/page/top/top2' // 吸顶2
 import DropDown from '@/page/dropDown/dropDown' // 无限滚动
 import Scroller from '@/page/dropDown/scroller' // 下拉刷新，上拉加载
 import Mescroll from '@/page/dropDown/mescroll' // 下拉刷新，上拉加载
@@ -42,6 +43,11 @@ export default new Router({
       path: '/top1',
       name: 'top1',
       component: Top1
+    },
+    {
+      path: '/top2',
+      name: 'top2',
+      component: Top2
     },
     {
       path: '/scroller',

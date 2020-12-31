@@ -11,6 +11,8 @@ import 'element-ui/lib/theme-chalk/index.css'
 import infiniteScroll from 'vue-infinite-scroll'
 import VueScroller from 'vue-scroller'
 import BaiduMap from 'vue-baidu-map'
+// import VueScrollProgress from 'vue-scroll-progress';
+
 
 import 'normalize.css/normalize.css'
 import './mock/mockServer' // 加载mockServer即可
@@ -22,6 +24,7 @@ Vue.use(VueScroller)
 Vue.use(BaiduMap, {
   ak: 'o5kR2wIYSWqM5jPq4q1BaGeKGdCGSkkH'
 });
+// Vue.use(VueScrollProgress)
 
 Vue.config.productionTip = false
 

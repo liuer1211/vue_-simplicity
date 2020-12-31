@@ -33,13 +33,14 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    padding: 0.6rem;
+    padding: 0.5rem 0.6rem;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     background: #4b55ce;
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 999;
     .header-logo{
       width: 4rem;
       height: 1.5rem;

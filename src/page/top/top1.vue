@@ -2,7 +2,7 @@
   <div class="top-main">
     <Header></Header>
     <div class="top-cen">
-123
+      123
     </div>
   </div>
 </template>

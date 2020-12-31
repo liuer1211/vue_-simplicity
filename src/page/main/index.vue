@@ -69,6 +69,9 @@
           case '3':
             this.$router.push({name:'top1'})
             return
+          case '3.1':
+            this.$router.push({name:'top2'})
+            return
           case '4':
             this.$router.push({name:'dropDown'})
             return
