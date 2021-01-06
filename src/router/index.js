@@ -10,6 +10,7 @@ import DropDown from '@/page/dropDown/dropDown' // 无限滚动
 import Scroller from '@/page/dropDown/scroller' // 下拉刷新，上拉加载
 import Mescroll from '@/page/dropDown/mescroll' // 下拉刷新，上拉加载
 import Map from '@/page/map/map' // 百度地图
+import User from '@/page/user/user' // 百度地图
 
 Vue.use(Router)
 
@@ -63,6 +64,11 @@ export default new Router({
       path: '/map',
       name: 'map',
       component: Map
+    },
+    {
+      path: '/user',
+      name: 'user',
+      component: User
     }
   ]
 })

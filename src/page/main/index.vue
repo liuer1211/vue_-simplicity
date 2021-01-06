@@ -84,6 +84,9 @@
           case '9':
             this.$router.push({name:'map'})
             return
+          case '10':
+            this.$router.push({name:'user'})
+            return
           default:
             this.getTip()
             return;
