@@ -15,6 +15,9 @@ import BaiduMap from 'vue-baidu-map'
 // import animated from 'animate.css'
 import vant from 'vant';
 import 'vant/lib/index.css';
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts
+import '../node_modules/echarts/map/js/china.js' // 引入中国地图
 
 import 'normalize.css/normalize.css'
 import './mock/mockServer' // 加载mockServer即可

@@ -54,6 +54,7 @@
    ![image.png](https://liuer1211.github.io/vue_-simplicity/static/img/5.png)
    ![image.png](https://liuer1211.github.io/vue_-simplicity/static/img/7.png)
    ![image.png](https://liuer1211.github.io/vue_-simplicity/static/img/10.png)
+   ![image.png](https://liuer1211.github.io/vue_-simplicity/static/img/11.png)
 
 # 扫描二维码，手机查看
    ![image.png](https://liuer1211.github.io/vue_-simplicity/static/img/8.png)

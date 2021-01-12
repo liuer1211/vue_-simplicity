@@ -2,7 +2,7 @@
   "mainList": [
     {
       "id" : "1",
-      "img": "https://cn.bing.com/th?id=OHR.NarniaForest_ZH-CN8466850438_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+      "img": "https://cn.bing.com/th?id=OHR.HolidayNubble_ZH-CN8122183595_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
       "tit": "登陆",
       "cen": "极简风格",
       "score": 5
@@ -83,6 +83,20 @@
       "tit": "我的",
       "cen": "极简风格",
       "score": 3.7
+    },
+    {
+      "id" : "11",
+      "img": "https://cn.bing.com/th?id=OHR.WildReindeer_ZH-CN8301029606_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+      "tit": "图标",
+      "cen": "极简风格",
+      "score": 4.1
+    },
+    {
+      "id" : "12",
+      "img": "https://cn.bing.com/th?id=OHR.WildReindeer_ZH-CN8301029606_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+      "tit": "音乐",
+      "cen": "极简风格",
+      "score": 4.1
     }
   ],
   "swiperList": [

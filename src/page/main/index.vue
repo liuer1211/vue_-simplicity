@@ -87,6 +87,12 @@
           case '10':
             this.$router.push({name:'user'})
             return
+          case '11':
+            this.$router.push({name:'echarts'})
+            return
+          case '12':
+            this.$router.push({name:'music'})
+            return
           default:
             this.getTip()
             return;
