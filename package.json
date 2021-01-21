@@ -17,6 +17,7 @@
     "echarts": "^4.2.0-rc.2",
     "element-ui": "^2.3.7",
     "js-cookie": "^2.2.1",
+    "js-md5": "^0.7.3",
     "mescroll.js": "^1.4.2",
     "mockjs": "^1.1.0",
     "node-sass": "^4.14.1",

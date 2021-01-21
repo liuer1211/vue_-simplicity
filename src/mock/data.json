@@ -15,13 +15,6 @@
       "score": 4
     },
     {
-      "id" : "3",
-      "img": "https://cn.bing.com/th?id=OHR.BabyGoat_ZH-CN7863798344_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
-      "tit": "置顶",
-      "cen": "极简风格",
-      "score": 3.2
-    },
-    {
       "id" : "3.1",
       "img": "https://cn.bing.com/th?id=OHR.BabyGoat_ZH-CN7863798344_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
       "tit": "置顶",
@@ -34,27 +27,6 @@
       "tit": "无限滚动",
       "cen": "极简风格",
       "score": 2.5
-    },
-    {
-      "id" : "5.1",
-      "img": "https://cn.bing.com/th?id=OHR.TreCime_ZH-CN7609469681_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
-      "tit": "下拉刷新,上拉加载",
-      "cen": "极简风格",
-      "score": 2.5
-    },
-    {
-      "id" : "5.2",
-      "img": "https://cn.bing.com/th?id=OHR.TreCime_ZH-CN7609469681_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
-      "tit": "下拉刷新,上拉加载",
-      "cen": "极简风格",
-      "score": 2.5
-    },
-    {
-      "id" : "6",
-      "img": "https://cn.bing.com/th?id=OHR.PolarExpress_ZH-CN9522496479_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
-      "tit": "图表",
-      "cen": "极简风格",
-      "score": 2.9
     },
     {
       "id" : "7",
@@ -86,8 +58,8 @@
     },
     {
       "id" : "11",
-      "img": "https://cn.bing.com/th?id=OHR.WildReindeer_ZH-CN8301029606_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
-      "tit": "图标",
+      "img": "https://cn.bing.com/th?id=OHR.PolarExpress_ZH-CN9522496479_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+      "tit": "图表",
       "cen": "极简风格",
       "score": 4.1
     },
@@ -102,59 +74,59 @@
   "swiperList": [
     {
       "name": "phone",
-      "icon": "el-icon-phone"
+      "icon": "phone-o"
     },
     {
       "name": "star",
-      "icon": "el-icon-star-on"
+      "icon": "star-o"
     },
     {
-      "name": "picture",
-      "icon": "el-icon-picture"
+      "name": "setting",
+      "icon": "setting-o"
     },
     {
-      "name": "goods",
-      "icon": "el-icon-s-goods"
+      "name": "fire",
+      "icon": "fire-o"
     },
     {
-      "name": "camera",
-      "icon": "el-icon-video-camera-solid"
+      "name": "coupon",
+      "icon": "coupon-o"
     },
     {
-      "name": "solid",
-      "icon": "el-icon-message-solid"
+      "name": "cart",
+      "icon": "cart-o"
     },
     {
-      "name": "promotion",
-      "icon": "el-icon-s-promotion"
+      "name": "friends",
+      "icon": "friends-o"
     },
     {
-      "name": "check",
-      "icon": "el-icon-s-check"
+      "name": "comment",
+      "icon": "comment-o"
     },
     {
-      "name": "share",
-      "icon": "el-icon-share"
+      "name": "gem",
+      "icon": "gem-o"
     },
     {
-      "name": "flag",
-      "icon": "el-icon-s-flag"
+      "name": "gift",
+      "icon": "gift-o"
     },
     {
-      "name": "marketing",
-      "icon": "el-icon-s-marketing"
+      "name": "service",
+      "icon": "service-o"
     },
     {
-      "name": "release",
-      "icon": "el-icon-s-release"
+      "name": "balance",
+      "icon": "balance-list-o"
     },
     {
-      "name": "platform",
-      "icon": "el-icon-s-platform"
+      "name": "music",
+      "icon": "music-o"
     },
     {
-      "name": "upload",
-      "icon": "el-icon-upload"
+      "name": "smile",
+      "icon": "smile-o"
     }
   ],
   "newsList": [

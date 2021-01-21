@@ -26,12 +26,11 @@
       export const reqHaHa = () => ajax('/haha')
       Mock.mock('/haha', {code:1, data: data.haha})
     直接使用 import {reqMainList} from '../../api/index'
-    4.使用vuex
-    5.使用路由缓存
-    6.使用路由守卫
-    7.使用swiper
-    8.使用组件
-    9.使用element-ui
+    4.使用Vuex
+    5.使用Swiper
+    6.使用UI框架
+    7.使用组件
+    8.使用路由守卫
 # github
     1.创建项目,上传
     echo "# vue_-simplicity" >> README.md

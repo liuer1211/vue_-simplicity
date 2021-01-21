@@ -9,7 +9,9 @@
               <div class="swiper-model" v-for="(item, index) in swiperListitem" :key="index">
                 <div class="swiper-model-up">
                   <div class="swiper-model-bg">
-                    <i class="sw-icon" >图</i> <!--:class="item.icon"-->
+                    <!--<i class="sw-icon" >图</i>-->
+                    <!--:class="item.icon"-->
+                    <van-icon :name="item.icon" />
                   </div>
                 </div>
                 <div class="swiper-model-bot">{{item.name}}</div>
@@ -173,6 +175,10 @@
   /deep/ .swiper-pagination-bullet{
     background: #c3c3c3;
     margin: 0 0.2rem;
+  }
+  /deep/ .van-icon{
+    color: #ccd720;
+    font-size: 1.5rem;
   }
 </style>
 

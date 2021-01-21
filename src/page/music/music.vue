@@ -117,7 +117,7 @@
       </div>
     </div>
     <!--弹出层-->
-    <van-popup v-model="show" position="bottom" :style="{ height: '30%' }" round="true" safe-area-inset-bottom>
+    <van-popup v-model="show" position="bottom" :style="{ height: '30%' }" round safe-area-inset-bottom>
       <div class="music-pop-main">
         <div class="music-pop-model">
           <div>
@@ -176,49 +176,49 @@
         songActive: 0, // 歌列表下标
         songList: [
           {
-            num: '',
+            num: '01',
+            song: '沧海一声笑沧海一声笑沧海一声笑沧海一声笑沧海一声笑',
+            singer: '许冠杰',
+            time: '3:45'
+          },
+          {
+            num: '01',
             song: '沧海一声笑',
             singer: '许冠杰',
             time: '3:45'
           },
           {
-            num: '',
+            num: '01',
             song: '沧海一声笑',
             singer: '许冠杰',
             time: '3:45'
           },
           {
-            num: '',
+            num: '01',
             song: '沧海一声笑',
             singer: '许冠杰',
             time: '3:45'
           },
           {
-            num: '',
+            num: '01',
             song: '沧海一声笑',
             singer: '许冠杰',
             time: '3:45'
           },
           {
-            num: '',
+            num: '01',
             song: '沧海一声笑',
             singer: '许冠杰',
             time: '3:45'
           },
           {
-            num: '',
+            num: '01',
             song: '沧海一声笑',
             singer: '许冠杰',
             time: '3:45'
           },
           {
-            num: '',
-            song: '沧海一声笑',
-            singer: '许冠杰',
-            time: '3:45'
-          },
-          {
-            num: '',
+            num: '01',
             song: '沧海一声笑',
             singer: '许冠杰',
             time: '3:45'
@@ -252,6 +252,7 @@
       },
       // 歌词分享
       getPop() {
+        // 整个大的div有点击事件，也可以阻止冒泡 @click.stop=''
         this.show= true
       }
     },
@@ -374,6 +375,7 @@
             align-items: center;
             flex: 4;
             cursor: pointer;
+            overflow: hidden;
             .music-song-num{
               margin: 0 0.4rem 0 0;
               font-size: 0.9rem;
@@ -382,6 +384,13 @@
               display: flex;
               justify-content: space-between;
               flex-direction: column;
+              overflow: hidden;
+              span{
+                overflow: hidden;
+                -ms-text-overflow: ellipsis;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+              }
               span:nth-child(1){
                 font-size: 0.7rem;
                 margin: 0 0 0.1rem 0;

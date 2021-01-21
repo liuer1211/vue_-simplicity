@@ -1,12 +1,82 @@
 <template>
   <div class="top-main">
     <Header></Header>
-    <!--列表导航-->
-    <div class="top-model">
-      <div @click="getNav(item, index)" :class="active === index ? 'active' : ''" v-for="(item, index) in navList" :key="index">{{item.name}}</div>
-    </div>
     <!--内容-->
-    <div class="top-cen">
+    <div class="top-cen" id="topCen">
+      <!--列表内容块-->
+      <div class="top-col" id="topCol">
+        <div class="top-col-flex">
+          <div class="top-col-model">
+            <div class="top-col-u">
+              <img src="https://cdn.docschina.org/home/logo/vue.svg"/>
+              <span>vue</span>
+            </div>
+            <div class="top-col-c">渐进式 JavaScript 框架</div>
+            <div class="top-col-b">
+              <a href="https://github.com/vuejs/cn.vuejs.org/">
+                <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+              </a>
+            </div>
+            <img class="top-col-i" src="data:image/png;base64,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"/>
+          </div>
+        </div>
+        <div class="top-col-flex">
+          <div class="top-col-model">
+            <div class="top-col-u">
+              <img src="https://cdn.docschina.org/home/logo/react.svg"/>
+              <span>React</span>
+            </div>
+            <div class="top-col-c">构建用户界面的 JavaScript 库</div>
+            <div class="top-col-b">
+              <a href="https://github.com/reactjs/zh-hans.reactjs.org">
+                <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+              </a>
+            </div>
+            <img class="top-col-i" src="data:image/png;base64,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"/>
+          </div>
+        </div>
+        <div class="top-col-flex">
+          <div class="top-col-model">
+            <div class="top-col-u">
+              <img src="https://cdn.docschina.org/home/logo/node.svg"/>
+              <span>Node.js</span>
+            </div>
+            <div class="top-col-c">基于 V8 引擎的 JS 运行环境</div>
+            <div class="top-col-b">
+              <a href="https://github.com/nodejscn/node-api-cn">
+                <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+              </a>
+            </div>
+            <img class="top-col-i" src="data:image/png;base64,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"/>
+          </div>
+        </div>
+        <div class="top-col-flex">
+          <div class="top-col-model">
+            <div class="top-col-u">
+              <img src="https://cdn.docschina.org/home/logo/vant.png"/>
+              <span>Vant</span>
+            </div>
+            <div class="top-col-c">移动端 Vue 组件库</div>
+            <div class="top-col-b">
+            </div>
+          </div>
+        </div>
+        <div class="top-col-flex">
+          <div class="top-col-model">
+            <div class="top-col-u">
+              <img src="https://cdn.docschina.org/home/logo/express.png"/>
+              <span>Express</span>
+            </div>
+            <div class="top-col-c">快速极简的 Web 框架</div>
+            <div class="top-col-b">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--列表导航-->
+      <div class="top-model" id="topModel">
+        <div @click="getNav(item, index)" :class="active === index ? 'active' : ''" v-for="(item, index) in navList" :key="index">{{item.name}}</div>
+      </div>
       <!--第n模块-->
       <div v-if="modelList.length > 0">
         <div class="top-model-list" v-for="(item, index) in modelList" :key="index">
@@ -28,281 +98,6 @@
           </div>
         </div>
       </div>
-
-
-
-
-        <!--<div class="coupon">
-          &lt;!&ndash; 1、优惠券金额和过期时间 &ndash;&gt;
-          <div class="price">
-            100元
-            <span>优惠券</span>
-            <p class="timeout">2020-12-31 18:18:18过期</p>
-          </div>
-
-          &lt;!&ndash; 2、优惠券描述 &ndash;&gt;
-          <div class="describe">
-            <p>1、商城、美食可用</p>
-            <p>2、过期作废</p>
-          </div>
-
-          &lt;!&ndash; 3、按钮 &ndash;&gt;
-          <div class="btns">
-            <button>立即使用</button>
-          </div>
-        </div>-->
-
-        <!--<div class="base-one-circle base-coupons"></div>-->
-
-      <!--<div class="coupon-wrapper">
-        <h3>京东优惠领取：</h3>
-        <div class="coupon-item">
-          <div class="style-one">
-            <div class="info-box">
-              <p class="nick">京东平台优惠?</p>
-              <div class="coupon-money">
-                <div class="lay of">￥<em>10</em></div>
-                <div class="lay">
-                  <p class="tit">优惠?</p>
-                  <p class="demand">满100元可用</p>
-                </div>
-              </div>
-            </div>
-            <a href="javascript:;" class="get-btn">
-              <span>立即领取</span>
-            </a>
-          </div>
-        </div>
-        <div class="coupon-item">
-          <div class="style-one have">
-            <div class="info-box">
-              <p class="nick">京东平台优惠?</p>
-              <div class="coupon-money">
-                <div class="lay of">￥<em>10</em></div>
-                <div class="lay">
-                  <p class="tit">优惠?</p>
-                  <p class="demand">满100元可用</p>
-                </div>
-              </div>
-            </div>
-            <a href="javascript:;" class="get-btn">
-              <span>已领取</span>
-            </a>
-          </div>
-        </div>
-        <h3>唯品会优惠?领取：</h3>
-        <div class="coupon-item">
-          <div class="style-two">
-            <div class="info-box">
-              <p class="nick">唯品会平台优惠?</p>
-              <div class="coupon-money">
-                <div class="lay of">￥<em>10</em></div>
-                <div class="lay">
-                  <p class="tit">优惠?</p>
-                  <p class="demand">满100元可用</p>
-                </div>
-              </div>
-            </div>
-            <a href="javascript:;" class="get-btn">
-              <span>立即领取</span>
-            </a>
-          </div>
-        </div>
-        <div class="coupon-item">
-          <div class="style-two have">
-            <div class="info-box">
-              <p class="nick">唯品会平台优惠?</p>
-              <div class="coupon-money">
-                <div class="lay of">￥<em>10</em></div>
-                <div class="lay">
-                  <p class="tit">优惠?</p>
-                  <p class="demand">满100元可用</p>
-                </div>
-              </div>
-            </div>
-            <a href="javascript:;" class="get-btn">
-              <span>已领取</span>
-            </a>
-          </div>
-        </div>
-        <h3>1号店优惠?领取：</h3>
-        <div class="coupon-item">
-          <div class="style-three">
-            <div class="info-box">
-              <p class="nick">1号店平台优惠券</p>
-              <div class="coupon-money">
-                <div class="lay of">￥<em>10</em></div>
-                <div class="lay">
-                  <p class="tit">优惠?</p>
-                  <p class="demand">满100元可用</p>
-                </div>
-              </div>
-            </div>
-            <a href="javascript:;" class="get-btn">
-              <span>点击领取</span>
-            </a>
-          </div>
-        </div>
-        <div class="coupon-item">
-          <div class="style-three have">
-            <div class="info-box">
-              <p class="nick">1号店平台优惠券</p>
-              <div class="coupon-money">
-                <div class="lay of">￥<em>10</em></div>
-                <div class="lay">
-                  <p class="tit">优惠?</p>
-                  <p class="demand">满100元可用</p>
-                </div>
-              </div>
-            </div>
-            <a href="javascript:;" class="get-btn">
-              <span>已领取</span>
-            </a>
-          </div>
-        </div>
-        <h3>当当网优惠券领取：</h3>
-        <div class="coupon-item">
-          <div class="style-four">
-            <div class="info-box">
-              <p class="nick">当当网平台优惠券</p>
-              <div class="coupon-money">
-                <div class="lay of">￥<em>10</em></div>
-                <div class="lay">
-                  <p class="tit">优惠?</p>
-                  <p class="demand">满100元可用</p>
-                </div>
-              </div>
-            </div>
-            <a href="javascript:;" class="get-btn">
-              <span class="coBlack">立即领取</span>
-            </a>
-          </div>
-        </div>
-        <div class="coupon-item">
-          <div class="style-four have">
-            <div class="info-box">
-              <p class="nick">当当网平台优惠券</p>
-              <div class="coupon-money">
-                <div class="lay of">￥<em>10</em></div>
-                <div class="lay">
-                  <p class="tit">优惠?</p>
-                  <p class="demand">满100元可用</p>
-                </div>
-              </div>
-            </div>
-            <a href="javascript:;" class="get-btn">
-              <span>已领取</span>
-            </a>
-          </div>
-        </div>
-        <h3>飞牛网优惠?领取：</h3>
-        <div class="coupon-item">
-          <div class="style-five">
-            <div class="info-box">
-              <p class="nick">飞牛网平台优惠券</p>
-              <div class="coupon-money">
-                <div class="lay of">￥<em>10</em></div>
-                <div class="lay">
-                  <p class="tit">优惠?</p>
-                  <p class="demand">满100元可用</p>
-                </div>
-              </div>
-            </div>
-            <a href="javascript:;" class="get-btn">
-              <span>立即领取</span>
-            </a>
-          </div>
-        </div>
-        <div class="coupon-item">
-          <div class="style-five have">
-            <div class="info-box">
-              <p class="nick">飞牛网平台优惠券</p>
-              <div class="coupon-money">
-                <div class="lay of">￥<em>10</em></div>
-                <div class="lay">
-                  <p class="tit">优惠?</p>
-                  <p class="demand">满100元可用</p>
-                </div>
-              </div>
-            </div>
-            <a href="javascript:;" class="get-btn">
-              <span>已领取</span>
-            </a>
-          </div>
-        </div>
-        <h3>我买网优惠?领取：</h3>
-        <div class="coupon-item">
-          <div class="style-six">
-            <div class="info-box">
-              <p class="nick">我买网平台优惠券</p>
-              <div class="coupon-money">
-                <div class="lay of">￥<em>10</em></div>
-                <div class="lay">
-                  <p class="tit">优惠?</p>
-                  <p class="demand">满100元可用</p>
-                </div>
-              </div>
-            </div>
-            <a href="javascript:;" class="get-btn">
-              <span>点击领取</span>
-            </a>
-          </div>
-        </div>
-        <div class="coupon-item">
-          <div class="style-six have">
-            <div class="info-box">
-              <p class="nick">我买网平台优惠券</p>
-              <div class="coupon-money">
-                <div class="lay of">￥<em>10</em></div>
-                <div class="lay">
-                  <p class="tit">优惠?</p>
-                  <p class="demand">满100元可用</p>
-                </div>
-              </div>
-            </div>
-            <a href="javascript:;" class="get-btn">
-              <span>已领取</span>
-            </a>
-          </div>
-        </div>
-        <h3>苏宁优惠?领取：</h3>
-        <div class="coupon-item">
-          <div class="style-seven">
-            <div class="info-box">
-              <p class="nick">苏宁平台优惠券</p>
-              <div class="coupon-money">
-                <div class="lay of">￥<em>10</em></div>
-                <div class="lay">
-                  <p class="tit">优惠?</p>
-                  <p class="demand">满100元可用</p>
-                </div>
-              </div>
-            </div>
-            <a href="javascript:;" class="get-btn">
-              <span>立即领取</span>
-            </a>
-          </div>
-        </div>
-        <div class="coupon-item">
-          <div class="style-seven have">
-            <div class="info-box">
-              <p class="nick">苏宁平台优惠券</p>
-              <div class="coupon-money">
-                <div class="lay of">￥<em>10</em></div>
-                <div class="lay">
-                  <p class="tit">优惠?</p>
-                  <p class="demand">满100元可用</p>
-                </div>
-              </div>
-            </div>
-            <a href="javascript:;" class="get-btn">
-              <span>已领取</span>
-            </a>
-          </div>
-        </div>
-      </div>-->
-
-
     </div>
   </div>
 </template>
@@ -321,9 +116,21 @@
           {id:'2',name: '优惠劵2'},
           {id:'3',name: '优惠劵3'}
         ],
-        cenList:[
+        cenList:[ // 全部数据
           {
             list: [
+              {
+                money:'100元',
+                type:'优惠劵',
+                date: '2020-12-31 24:00:00',
+                cen: ['1.美食商城可用','2.过期自动作废']
+              },
+              {
+                money:'100元',
+                type:'优惠劵',
+                date: '2020-12-31 24:00:00',
+                cen: ['1.美食商城可用','2.过期自动作废']
+              },
               {
                 money:'100元',
                 type:'优惠劵',
@@ -341,7 +148,25 @@
           {
             list: [
               {
-                money:'200元',
+                money:'100元',
+                type:'优惠劵',
+                date: '2020-12-31 24:00:00',
+                cen: ['1.美食商城可用','2.过期自动作废']
+              },
+              {
+                money:'100元',
+                type:'优惠劵',
+                date: '2020-12-31 24:00:00',
+                cen: ['1.美食商城可用','2.过期自动作废']
+              },
+              {
+                money:'100元',
+                type:'优惠劵',
+                date: '2020-12-31 24:00:00',
+                cen: ['1.美食商城可用','2.过期自动作废']
+              },
+              {
+                money:'100元',
                 type:'优惠劵',
                 date: '2020-12-31 24:00:00',
                 cen: ['1.美食商城可用','2.过期自动作废']
@@ -353,9 +178,37 @@
                 cen: ['1.美食商城可用','2.过期自动作废']
               }
             ]
-          }
+          },
+          {
+            list: [
+              {
+                money:'100元',
+                type:'优惠劵',
+                date: '2020-12-31 24:00:00',
+                cen: ['1.美食商城可用','2.过期自动作废']
+              },
+              {
+                money:'100元',
+                type:'优惠劵',
+                date: '2020-12-31 24:00:00',
+                cen: ['1.美食商城可用','2.过期自动作废']
+              },
+              {
+                money:'100元',
+                type:'优惠劵',
+                date: '2020-12-31 24:00:00',
+                cen: ['1.美食商城可用','2.过期自动作废']
+              },
+              {
+                money:'100元',
+                type:'优惠劵',
+                date: '2020-12-31 24:00:00',
+                cen: ['1.美食商城可用','2.过期自动作废']
+              }
+            ]
+          },
         ],
-        modelList:[]
+        modelList:[] // 单个菜单数据
       }
     },
     methods: {
@@ -366,13 +219,31 @@
         if (this.cenList.length > index) {
           this.modelList.push(this.cenList[index])
         }
+      },
+      // 改变元素值
+      handleScroll () {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+        let offsetTop1 = document.querySelector('#topCen').offsetTop;
+        let offsetTop2 = document.querySelector('#topModel').offsetTop;
+        let offsetTop3 = document.querySelector('#topCol').offsetHeight;
+        // console.log(scrollTop,offsetTop1,offsetTop2,offsetTop3)
+        // 判断,高度大于div,加上active
+        if(scrollTop > offsetTop3){
+          document.getElementById("topModel").classList.add("active")
+        }else{
+          document.getElementById("topModel").classList.remove("active")
+        }
       }
     },
     mounted(){
       this.modelList.push(this.cenList[0])
+      window.addEventListener('scroll', this.handleScroll) //给window添加一个滚动滚动监听事件
     },
     beforeDestroy(){
-    }
+    },
+    destroyed () {//离开该页面需要移除这个监听的事件
+      window.removeEventListener('scroll', this.handleScroll)
+    },
   }
 </script>
 
@@ -386,12 +257,15 @@
       display: -ms-flexbox;
       display: flex;
       font-size: 0.8rem;
-      position: fixed;
-      z-index:999;
-      background: #0a0a0a;
+      background: #5d5d5d;
       width: 100%;
-      top:2.5rem;
+      border-radius: 0.15rem;
       color: #fff;
+      &.active{
+        position: fixed;
+        z-index:999;
+        top:2.5rem;
+      }
       >div{
         cursor: pointer;
         padding: 0 0.4rem;
@@ -416,19 +290,95 @@
       }
     }
     .top-cen{
-      color: #fff;
-      height: 100rem;
-      margin: 4.8rem 0 0 0;
+      color: #000;
+      margin: 2.5rem 0 0 0;
+      .top-col{
+        color: #fff;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 0 0.6rem;
+        >div:nth-child(2n+1){
+          padding: 0.6rem 0.3rem 0 0.6rem;
+        }
+        >div:nth-child(2n){
+          padding: 0.6rem 0.6rem 0 0.3rem;
+        }
+        .top-col-flex{
+          width: 50%;
+          box-sizing: border-box;
+          .top-col-model{
+            background: #4b4b4b;
+            position: relative;
+            border-radius: 0.2rem;
+            overflow: hidden;
+            .top-col-u{
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
+              box-sizing: border-box;
+              padding: 0.4rem;
+              img{
+                width: 1.5rem;
+                height: 1.5rem;
+                -o-object-fit: cover;
+                object-fit: cover;
+              }
+              span{
+                font-weight: 600;
+                font-size: 1rem;
+                margin: 0 0 0 0.4rem;
+              }
+            }
+            .top-col-c{
+              padding: 0.4rem;
+              font-size: 0.7rem;
+            }
+            .top-col-b{
+              display: flex;
+              align-items: center;
+              box-sizing: border-box;
+              padding: 0.4rem;
+              a{
+                svg{
+                  display: block;
+                  width: 1rem;
+                  height: 1rem;
+                }
+                img{
+                  width: 1rem;
+                  height: 1rem;
+                  display: block;
+                }
+              }
+            }
+            .top-col-i{
+              position: absolute;
+              top: 0;
+              right: 0;
+              width: 2.5rem;
+              height: 2.5rem;
+            }
+          }
+        }
+      }
       .top-model-list{
         padding: 0.6rem;
         .top-model-sw{
           width: 8rem;
-          margin: 0 0 0.2rem 0;
+          margin: 0 0 0.6rem 0;
         }
         .coupon-1{
           border-radius: 0.2rem 0.2rem 0 0;
           width: 8rem;
-          background: radial-gradient(circle at 4rem 0rem, transparent 0.5rem, #28A4F2 0) top;
+          background: radial-gradient(circle at 4rem 0rem, transparent 0.5rem, #e613f5 0) top;
           position: relative;
           &::after {
             content: "";
@@ -441,7 +391,7 @@
             bottom: -.36rem;
             left: 0;
             right: 0;
-            background-image: linear-gradient(-45deg,#28A4F2 25%,transparent 25%,transparent),linear-gradient(-135deg,#28A4F2 25%,transparent 25%,transparent),linear-gradient(-45deg,transparent 75%,#28A4F2 75%),linear-gradient(-135deg,transparent 75%,#28A4F2 75%);
+            background-image: linear-gradient(-45deg,#e613f5 25%,transparent 25%,transparent),linear-gradient(-135deg,#e613f5 25%,transparent 25%,transparent),linear-gradient(-45deg,transparent 75%,#e613f5 75%),linear-gradient(-135deg,transparent 75%,#e613f5 75%);
           }
           /*filter: drop-shadow(3px 3px 3px rgba(255,255,255,.3));*/
           /*background-image: radial-gradient(shape size at position, start-color, …, last-color);*/
@@ -460,6 +410,7 @@
             font-size: 0.6rem;
             >span{
               font-size: 0.8rem;
+              font-weight: 600;
             }
           }
           >div:nth-child(2){
@@ -470,7 +421,7 @@
           border-radius: 0 0 0.2rem 0.2rem;
           font-size: 0.7rem;
           padding: 1rem 0.3rem 0.5rem;
-          background: #6b6b6b;
+          background: #f1f1f1;
           .coupon-bot-cen{
             display: -webkit-box;
             display: -ms-flexbox;
@@ -486,7 +437,7 @@
           .coupon-but{
             cursor: pointer;
             margin: 1rem 1rem 0.3rem;
-            background: #1197ca;
+            background: #e613f5;
             text-align: center;
             padding: 0.4rem 0.2rem;
             border-radius: 0.2rem;
@@ -495,677 +446,4 @@
       }
     }
   }
-
-
-/*  .coupon{
-    background-color: #E0E0E0;
-    width: 200px;
-    !* css变量 *!
-    --main-color: #EC407A;
-    --f-color: #444;
-  }
-  .price {
-    position: relative;
-    height: 120px;
-    background-image: radial-gradient(
-        circle at 100px -8px, #fff 20px, var(--main-color) 21px
-    );
-    color: #fff;
-    font-size: 20px;
-    text-align: center;
-    padding-top: 40px;
-  }
-  .price .timeout{
-    color: var(--f-color);
-    font-size: 14px;
-    margin-top: 25px;
-  }
-  .price span{
-    font-size: 14px;
-  }
-  .price::after{
-    position: absolute;
-    content: '';
-    display: block;
-    bottom: 0px;
-    height: 10px;
-    width: 100%;
-    !* background-size: 11px 200px; *!
-    background-image:
-      radial-gradient(
-          circle at 5px 10px,
-          #E0E0E0 6px,
-          var(--main-color) 7px);
-  }
-  !*.price::after{
-    position: absolute;
-    content: '';
-    display: block;
-    bottom: -5px;
-    width: 100%;
-    border-bottom: 10px dotted #E0E0E0;
-  }*!
-  .describe{
-    color: #333;
-    padding: 10px;
-    font-size: 14px;
-  }
-  .btns {
-    !* 使其button可以居中 *!
-    text-align: center;
-  }
-  .btns button{
-    !* 重置按钮样式 *!
-    border: none;
-    box-shadow: none;
-    outline: none;
-
-    background-color: var(--main-color);
-    color: #fff;
-    width: 50%;
-    border-radius: 20px;
-    line-height: 30px;
-    margin: 40px 0 20px;
-    cursor: pointer;
-  }
-
-  .base-one-circle {
-  !*  width: 100px;
-    height: 100px;
-    position: relative;
-    background: radial-gradient(circle at 0px 50px, transparent 10px, #28A4F2 0) top*!
-    width: 250px;
-    height: 100px;
-    position: relative;
-    background: radial-gradient(circle at right top, transparent 10px,  #28A4F2 0) top left / 60px 51% no-repeat,
-    radial-gradient(circle at right bottom, transparent 10px,  #28A4F2 0) bottom left /60px 51% no-repeat,
-    radial-gradient(circle at left top, transparent 10px, #eeeeee 0) top right /190px 51% no-repeat,
-    radial-gradient(circle at left bottom, transparent 10px, #eeeeee 0) bottom right /190px 51% no-repeat;
-    filter: drop-shadow(3px 3px 3px rgba(0,0,0,.3));
-  }
-  .base-coupons::before {
-    content: '';
-    height: 80px;
-    border: 1px dashed #fff;
-    position: absolute;
-    left: 60px;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-  }
-  .base-coupons::after {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width:5px;
-    top: 0;
-    right: -5px;
-    background-image: linear-gradient(to bottom, #eeeeee 5px, transparent 5px, transparent),
-    radial-gradient(10px circle at 5px 10px, transparent 5px, #eeeeee 5px);
-    background-size: 5px 15px;
-  }*/
-
-
-  /*@charset "utf-8";
-  html {
-    margin:0;
-    height:100%;
-    -ms-text-size-adjust:100%;
-    -webkit-text-size-adjust:100%;
-    font-size:62.5%;
-  }
-  body {
-    width:100%;
-    max-width:640px;
-    min-width:320px;
-    height:100%;
-    margin:0 auto;
-    padding:0;
-    font-family:"Microsoft Yahei";
-    font-size:1.2rem;
-    color:#a1a1a1;
-    background:#f5f5f5;
-    position:relative;
-    overflow-x:hidden;
-    -webkit-overflow-scrolling:touch;
-  }
-  a {
-    text-decoration:none;
-    color:#a1a1a1;
-    background:transparent;
-    -webkit-tap-highlight-color:transparent;
-  }
-  a:active {
-    color:#8c88ff;
-    border:none;
-    outline:none;
-  }
-  article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary {
-    display:block;
-  }
-  audio,canvas,progress,video {
-    display:inline-block;
-    vertical-align:baseline;
-  }
-  audio:not([controls]) {
-    display:none;
-    height:0;
-  }
-  [hidden],template {
-    display:none;
-  }
-  input {
-    border:1px solid #999;
-    line-height:normal;
-    vertical-align:middle;
-    outline:0;
-    border-radius:0;
-    background:#FFFFFF;
-    -webkit-appearance:none;
-  }
-  input[type="radio"],input[type="checkbox"] {
-    padding:0;
-    -webkit-tap-highlight-color:rgba(255,255,255,0);
-  }
-  input[type="number"] {
-    -moz-appearance:textfield;
-  }
-  input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button {
-    margin:0;
-    height:auto;
-    -webkit-appearance:none !important;
-  }
-  input[type="search"] {
-    -webkit-appearance:textfield;
-  }
-  input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration {
-    -webkit-appearance:none;
-  }
-  input::-moz-placeholder,textarea::-moz-placeholder {
-    font-size:1.4rem;
-    color:#c1c1c1;
-  }
-  input:-ms-input-placeholder,textarea:-ms-input-placeholder {
-    font-size:1.4rem;
-    color:#c1c1c1;
-  }
-  input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {
-    font-size:1.4rem;
-    color:#c1c1c1;
-  }
-  button,input,optgroup,select,textarea {
-    margin:0;
-    font:inherit;
-    color:inherit;
-    -webkit-tap-highlight-color:rgba(255,255,255,0);
-  }
-  button {
-    border:none;
-    overflow:visible;
-  }
-  button,select {
-    text-transform:none;
-  }
-  button,html input[type="button"],input[type="reset"],input[type="submit"] {
-    -webkit-appearance:none;
-    cursor:pointer;
-  }
-  button[disabled],html input[disabled] {
-    cursor:default;
-  }
-  button::-moz-focus-inner,input::-moz-focus-inner {
-    border:0;
-    padding:0;
-  }
-  textarea {
-    resize:vertical;
-    overflow:auto;
-  }
-  textarea:focus {
-    outline:none;
-  }
-  h1,h2,h3,h4,h5,h6,p,figure,form,blockquote,ul,ol,li,dl,dd,td,th {
-    margin:0;
-    padding:0;
-  }
-  h1,h2,h3,h4,h5,h6 {
-    font:inherit;
-  }
-  ul,ol {
-    list-style:none;
-  }
-  em,i {
-    font-style:normal;
-  }
-  table {
-    border-collapse:collapse;
-    border-spacing:0;
-  }
-  label {
-    -webkit-tap-highlight-color:rgba(255,255,255,0);
-  }
-  img {
-    max-width:100%;
-    height:auto;
-    border:0;
-    vertical-align:middle;
-  }
-  * {
-    -webkit-box-sizing:border-box;
-    box-sizing:border-box;
-  }
-  .coupon-wrapper {
-    width:100%;
-    height:auto;
-    padding:5%;
-  }
-  .coupon-wrapper .coupon-item {
-    width:100%;
-  }
-  .coupon-wrapper h3 {
-    height:3rem;
-    line-height:1.8rem;
-    font-size:1.4rem;
-    color:#454545;
-    padding:2% 0;
-  }
-  .coupon-item .nick {
-    padding:.66% 0;
-    color:#fff;
-  }
-  .coupon-item .coupon-money {
-    width:100%;
-    display:-webkit-box;
-    display:-webkit-flex;
-    display:flex;
-    font-size:1.2rem;
-    align-items:center;
-  }
-  .coupon-item .coupon-money em {
-    font-size:3.8rem;
-  }
-  .coupon-item .coupon-money .lay:last-child {
-    flex:1;
-    padding:0 3%;
-    line-height:1.66rem;
-  }
-  .style-one,.style-two,.style-three,.style-four,.style-five,.style-six,.style-seven {
-    width:100%;
-    height:8rem;
-    position:relative;
-    margin:5% 0;
-    display:-webkit-box;
-    display:-webkit-flex;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background-color:#fff;
-    border:1px solid #E5004F;
-  }
-  .style-one:after,.style-three .get-btn:after {
-    content:"";
-    width:1.2rem;
-    position:absolute;
-    top:0;
-    bottom:0;
-    right:23.9%;
-    display:block;
-    z-index:9;
-    background-color:#fff;
-    background-position:100% 35%;
-    background-size:2rem .66rem;
-    background-image:linear-gradient(-45deg,#e5004f 25%,transparent 25%,transparent),linear-gradient(-135deg,#e5004f 25%,transparent 25%,transparent),linear-gradient(-45deg,transparent 75%,#e5004f 75%),linear-gradient(-135deg,transparent 75%,#e5004f 75%);
-  }
-  .style-one .info-box,.style-two .info-box,.style-three .info-box,.style-four .info-box,.style-five .info-box,.style-six .info-box,.style-seven .info-box {
-    -webkit-box:1;
-    -webkit-flex:1;
-    flex:1;
-    padding:0 3% 0 10%;
-    position:relative;
-  }
-  .style-one .info-box:before,.style-one .info-box:after,.style-one .get-btn:before,.style-one .get-btn:after,.style-two .info-box:before,.style-two .info-box:after,.style-two .get-btn:before,.style-two .get-btn:after {
-    content:"";
-    width:1.4rem;
-    height:2rem;
-    position:absolute;
-    z-index:9;
-    border-width:1px;
-    border-style:solid;
-    border-color:transparent #E5004F transparent transparent;
-    -webkit-border-radius:50%;
-    border-radius:50%;
-    background-color:#f5f5f5;
-  }
-  .style-one .info-box:before,.style-two .info-box:before {
-    top:-1.8rem;
-    left:-.5rem;
-    -webkit-transform:rotate(43deg);
-    transform:rotate(43deg);
-  }
-  .style-one .info-box:after,.style-two .info-box:after {
-    bottom:-1.8rem;
-    left:-.5rem;
-    -webkit-transform:rotate(-43deg);
-    transform:rotate(-43deg);
-  }
-  .style-one .get-btn:before,.style-two .get-btn:before {
-    top:-.8rem;
-    right:-.35rem;
-    -webkit-transform:rotate(143deg);
-    transform:rotate(143deg);
-    border-color:transparent;
-  }
-  .style-one .get-btn:after,.style-two .get-btn:after {
-    bottom:-.8rem;
-    right:-.35rem;
-    -webkit-transform:rotate(-143deg);
-    transform:rotate(-143deg);
-    border-color:transparent;
-  }
-  .style-one .get-btn,.style-two .get-btn,.style-three .get-btn,.style-four .get-btn,.style-six .get-btn,.style-seven .get-btn {
-    display:-webkit-box;
-    display:-webkit-flex;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    width:24%;
-    height:8rem;
-    text-align:center;
-    color:#fff;
-    font-size:1.5rem;
-    line-height:1.35;
-    background-color:#E5004F;
-    position:relative;
-  }
-  .style-one .get-btn span {
-    width:1.6rem;
-    padding:.66rem 2rem .66rem 0;
-    display:inherit;
-    margin:0 auto;
-    word-break:break-all;
-  }
-  .style-one .nick,.style-four .nick {
-    color:#c1c1c1;
-  }
-  .style-one .of,.style-one .lay .tit,.style-four .of,.style-four .lay .tit,.style-six .nick {
-    color:#E5004F;
-  }
-  .style-one .lay .demand,.style-four .lay .demand {
-    color:#454545;
-  }
-  .style-two {
-    background-color:#ED008C;
-    border:1px solid #ED008C;
-    color:#fff;
-  }
-  .style-two:before,.style-two:after {
-    content:"";
-    height:.5rem;
-    position:absolute;
-    display:block;
-    z-index:9;
-    background-image:linear-gradient(-45deg,#ED008C 25%,transparent 25%,transparent),linear-gradient(-135deg,#ED008C 25%,transparent 25%,transparent),linear-gradient(-45deg,transparent 75%,#ED008C 75%),linear-gradient(-135deg,transparent 75%,#ED008C 75%);
-    background-size:1rem 1rem;
-    background-repeat:repeat-x,repeat-x;
-  }
-  .style-two:before {
-    top:-.4rem;
-    left:.5rem;
-    right:.5rem;
-    -webkit-transform:rotate(180deg);
-    transform:rotate(180deg);
-  }
-  .style-two:after {
-    bottom:-.36rem;
-    left:1.2rem;
-    right:1.38rem;
-  }
-  .style-two .info-box:before,.style-two .info-box:after {
-    border-color:transparent;
-  }
-  .style-two .get-btn {
-    background-color:#ed008c;
-  }
-  .style-two .get-btn span,.style-three .get-btn span,.style-six .get-btn span,.style-seven .get-btn span {
-    width:4rem;
-    font-size:1.8rem;
-    word-break:break-all;
-  }
-  .style-two .of {
-    color:#FFF100;
-  }
-  .style-three {
-    background-color:#378AE8;
-    border:none;
-    color:#fff;
-  }
-  .style-three:before {
-    content:"";
-    position:absolute;
-    left:-.66rem;
-    width:2.4rem;
-    height:2.8rem;
-    top:50%;
-    -webkit-transform:translate(-30%,-50%);
-    transform:translate(-30%,-50%);
-    -webkit-box-shadow:3px 0 0 #aeadad;
-    box-shadow:3px 0 0 #aeadad;
-    -webkit-border-radius:80%;
-    border-radius:80%;
-    background-color:#f5f5f5;
-  }
-  .style-three .get-btn {
-    width:34%;
-    background-color:#fff;
-  }
-  .style-three .get-btn:after {
-    left:0;
-    background-image:linear-gradient(-45deg,#ffffff 25%,#378ae8 25%,#378ae8)
-  }
-  .style-six .get-btn,.style-seven .get-btn {
-    width:28%;
-    background-color:#fff;
-  }
-  .style-three .get-btn span,.style-six .get-btn span {
-    color:#378AE8;
-  }
-  .style-three .get-btn span:after,.style-six .get-btn span:after {
-    content:"V";
-    font-size:1.6rem;
-    display:block;
-  }
-  .style-four {
-    background-color:#fff;
-    -webkit-border-radius:1rem;
-    border-radius:1rem;
-    border:1px dashed #e5004f;
-  }
-  .style-four .get-btn {
-    width:30%;
-    height:7rem;
-    background-color:#fff;
-    text-align:center;
-  }
-  .style-four .get-btn span {
-    display:block;
-    padding:2.66rem 0;
-    font-size:1.5rem;
-    word-break:break-all;
-    color:#454545;
-  }
-  .style-five {
-    background-color:#E5004F;
-    -webkit-border-radius:1rem;
-    border-radius:1rem;
-    border:none;
-    color:#fff;
-  }
-  .style-five .get-btn {
-    width:28%;
-    height:7rem;
-    position:relative;
-    -webkit-perspective:180;
-    perspective:180;
-  }
-  .style-five .get-btn:after {
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    background-color:#F8B551;
-    transform:rotateY(-28deg);
-    z-index:1;
-    -webkit-border-radius:.66rem;
-    border-radius:.66rem;
-    -webkit-box-shadow:-3px 0 8px #793030;
-    box-shadow:-3px 0 8px #793030;
-  }
-  .style-five .get-btn span {
-    width:4rem;
-    word-break:break-all;
-    font-size:1.8rem;
-    color:#454545;
-    position:absolute;
-    top:50%;
-    left:50%;
-    -webkit-transform:translate(-30%,-50%);
-    transform:translate(-30%,-50%);
-    z-index:3;
-  }
-  .style-six {
-    background-color:#F7DBCD;
-    color:#E5004F;
-    border:none;
-  }
-  .style-six:after,.style-six:before {
-    content:"";
-    height:.5rem;
-    position:absolute;
-    left:0;
-    right:0;
-    display:block;
-    z-index:9;
-    background-image:linear-gradient(-45deg,#f5f5f5 25%,transparent 25%,transparent),linear-gradient(-135deg,#f5f5f5 25%,transparent 25%,transparent),linear-gradient(-45deg,transparent 75%,#f5f5f5 75%),linear-gradient(-135deg,transparent 75%,#f5f5f5 75%);
-    background-size:1rem 1rem;
-    background-repeat:repeat-x,repeat-x;
-  }
-  .style-six:after {
-    top:-.12rem;
-  }
-  .style-six:before {
-    bottom:-.12rem;
-    -webkit-transform:rotate(180deg);
-    transform:rotate(180deg);
-  }
-  .style-six .get-btn span {
-    color:#E5004F;
-  }
-  .style-seven {
-    background-color:#F3B502;
-    color:#fff;
-    border:none;
-  }
-  .style-seven:before,.style-seven:after {
-    content:"";
-    position:absolute;
-    width:2rem;
-    height:6rem;
-    -webkit-border-radius:50%;
-    border-radius:50%;
-    background-color:#f5f5f5;
-    top:50%;
-    -webkit-transform:translate(0,-50%);
-    transform:translate(0,-50%);
-  }
-  .style-seven:before {
-    left:-1rem;
-    -webkit-box-shadow:2px 0 0 #c6c6c6;
-    box-shadow:2px 0 0 #c6c6c6;
-  }
-  .style-seven:after {
-    right:-1rem;
-    -webkit-box-shadow:-2px 0 0 #c6c6c6;
-    box-shadow:-2px 0 0 #c6c6c6;
-  }
-  .style-seven .get-btn {
-    background-color:#000000;
-    padding-right:.88rem;
-  }
-  !* 已领取 *!
-  .style-one.have {
-    border:1px solid #ddd;
-    color:#C1C1C1;
-    color:#C1C1C1;
-  }
-  .style-one.have .info-box:before,.style-one.have .info-box:after,.style-two.have .info-box:before,.style-two.have .info-box:after {
-    border-right:1px solid #c1c1c1;
-  }
-  .style-one.have .of,.style-one.have .tit,.style-one.have .demand,.style-four.have .of,.style-four.have .tit,.style-four.have .demand {
-    color:#c1c1c1;
-  }
-  .style-one.have .get-btn {
-    background-color:#c1c1c1;
-  }
-  .style-one.have .get-btn span {
-    color:#fff;
-  }
-  .style-one.have .get-btn:before,.style-one.have .get-btn:after,.style-two.have .get-btn:before,.style-two.have .get-btn:after {
-    border-color:transparent;
-  }
-  .style-one.have:after {
-    background-image:linear-gradient(-45deg,#c1c1c1 25%,transparent 25%,transparent),linear-gradient(-135deg,#c1c1c1 25%,transparent 25%,transparent),linear-gradient(-45deg,transparent 75%,#c1c1c1 75%),linear-gradient(-135deg,transparent 75%,#c1c1c1 75%);
-  }
-  .style-two.have,.style-three.have {
-    background-color:#c1c1c1;
-    border:none;
-  }
-  .style-two.have .of {
-    color:#fff;
-  }
-  .style-two.have:before,.style-two.have:after {
-    background-image:linear-gradient(-45deg,#c1c1c1 25%,transparent 25%,transparent),linear-gradient(-135deg,#c1c1c1 25%,transparent 25%,transparent),linear-gradient(-45deg,transparent 75%,#c1c1c1 75%),linear-gradient(-135deg,transparent 75%,#c1c1c1 75%);
-  }
-  .style-two.have .get-btn {
-    background-color:#c1c1c1;
-  }
-  .style-two.have .get-btn span,.style-three.have .get-btn span,.style-six.have .get-btn span,.style-seven.have .get-btn span {
-    width:1.6rem;
-    padding:1.36rem 0;
-    font-size:1.6rem;
-  }
-  .style-three.have .get-btn:after {
-    background-image:linear-gradient(-45deg,#ffffff 25%,#c1c1c1 25%,#c1c1c1);
-  }
-  .style-three.have .get-btn span,.style-four.have .get-btn span,.style-six.have .get-btn span {
-    color:#767676;
-    font-size:1.6rem;
-  }
-  .style-three.have .get-btn span:after,.style-six.have .get-btn span:after {
-    content:"";
-  }
-  .style-four.have {
-    border:1px dashed #C1C1C1;
-  }
-  .style-five.have,.style-five.have .get-btn:after,.style-six.have,.style-seven.have {
-    background-color:#c1c1c1;
-  }
-  .style-five.have .get-btn:after {
-    -webkit-box-shadow:-3px 0 8px #8c8c8c;
-    box-shadow:-3px 0 8px #8c8c8c;
-  }
-  .style-five.have .get-btn span {
-    width:5rem;
-    font-size:1.5rem;
-    color:#fff;
-  }
-  .style-six.have .nick,.style-six.have .of,.style-six.have .tit,.style-six.have .demand {
-    color:#fff;
-  }
-  .style-six.have span,.style-seven.have span {
-    font-size:1.6rem;
-    color:rgba(189,189,189,1);
-  }
-*/
 </style>

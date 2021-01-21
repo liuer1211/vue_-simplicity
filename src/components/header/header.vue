@@ -36,7 +36,7 @@
     padding: 0.5rem 0.6rem;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    background: #4b55ce;
+    background: #4a3196;
     position: fixed;
     top: 0;
     width: 100%;

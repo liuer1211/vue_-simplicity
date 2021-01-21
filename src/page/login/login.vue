@@ -2,7 +2,8 @@
   <div class="login-main">
     <div class="login-top">
       <!--<img class="login-img" src=""/>-->
-      <i class="el-icon-user"></i>
+      <!--<i class="el-icon-user"></i>-->
+      <van-icon name="contact" />
     </div>
     <div class="login-model">
       <el-input v-model="userName" placeholder="请输入用户名/账号/手机号"></el-input>
@@ -15,7 +16,9 @@
 </template>
 
 <script>
-  import {eleUtil} from '@/assets/js/util'
+  import { eleUtil } from '@/assets/js/util'
+  import { setCookie } from '@/assets/js/support' // cookie缓存
+  import { setToken } from '@/assets/js/auth' // 验权
   export default {
     data () {
       return {
@@ -35,15 +38,21 @@
       // 登陆
       toLogin() {
         if (this.userName==='') {
-          eleUtil.toChangeTip('error','用户名不能为空!')
-          // this.getTip('error','用户名不能为空!')
+          // eleUtil.toChangeTip('error','用户名不能为空!')
+          this.getTip('error','用户名不能为空!')
           return
         }
         if (this.userPassword==='') {
           this.getTip('error','密码不能为空!')
           return
         }
-        this.getTip('success','登陆成功!')
+        // this.getTip('success','登陆成功!')
+        let token = this.userName
+        token = this.$md5(token)
+        setToken(token) // 设置token
+        setCookie("username",this.userName,15);
+        setCookie("password",this.userPassword,15);
+        this.$router.push({path: '/'})
       },
       // 消息提示
       getTip(data1,data2){
@@ -118,6 +127,10 @@
         background: #e6e6e6;
         width: 100%;
       }
+    }
+    /deep/ .van-icon{
+      font-size: 4rem;
+      color: #fff;
     }
   }
 </style>
