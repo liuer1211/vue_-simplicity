@@ -23,6 +23,7 @@ Vue.prototype.$md5 = md5;
 
 import 'normalize.css/normalize.css'
 import './mock/mockServer' // 加载mockServer即可
+import '@/directive/index'
 
 import '@/permission' // 全局路由配置
 

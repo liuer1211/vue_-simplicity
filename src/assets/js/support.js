@@ -9,7 +9,7 @@ export function setSupport(isSupport) {
 }
 
 export function setCookie(key,value,expires) {
-  return Cookies.set(key, value,{ expires: expires})
+  return Cookies.set(key, value,{ expires: expires}) // 天
 }
 
 export function getCookie(key) {

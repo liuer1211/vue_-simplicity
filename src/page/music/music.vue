@@ -116,6 +116,8 @@
         </div>
       </div>
     </div>
+<!--    <input v-model="msg" type="text" style="color:#000;"/>-->
+<!--    <div></div>-->
     <!--弹出层-->
     <van-popup v-model="show" position="bottom" :style="{ height: '30%' }" round safe-area-inset-bottom>
       <div class="music-pop-main">
@@ -172,6 +174,7 @@
   export default {
     data() {
       return{
+        msg:'qqq',
         show: false, // 是否展示弹出层
         songActive: 0, // 歌列表下标
         songList: [
