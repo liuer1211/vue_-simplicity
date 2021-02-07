@@ -32,6 +32,7 @@
   import { mapState, mapActions } from 'vuex'
   import Swiper from 'swiper'
   import 'swiper/dist/css/swiper.min.css'
+  import Push from 'push.js'
   export default {
     data () {
       return {
@@ -75,6 +76,15 @@
       },
       // 获得九宫格数据，调方法
       ...mapActions(['getSwiperList']),
+      //推送弹框消息
+      pushMessage(message){
+        Push.create("消息通知的标题", {
+          body: message,
+          requireInteraction: true,
+          //icon: '/icon.png',
+          timeout: 600000,
+        });
+      }
     },
     watch: {
       swiperList(val) {
@@ -97,10 +107,16 @@
       // 获得九宫格数据
       // this.$store.dispatch('getSwiperList')
       this.getSwiperList()
+      //消息通知的内容
+      this.pushMessage('消息通知的内容');
     },
     beforeDestroy() {
       // 离开页面的时候清除
       this.clearBodyBackGround()
+    },
+    created() {
+      //消息通知的初始化
+      Push.Permission.request();
     }
   }
 </script>

@@ -124,7 +124,7 @@
   .index-main{
     color: #fff;
     .index-body{
-      margin: 4rem 0 0;
+      margin: 4.1rem 0 0;
       padding: 0 1rem 1rem;
       .index-model-one{
         display: -webkit-box;
