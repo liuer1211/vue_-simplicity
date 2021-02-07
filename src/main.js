@@ -21,6 +21,10 @@ import '../node_modules/echarts/map/js/china.js' // 引入中国地图
 import md5 from 'js-md5';
 Vue.prototype.$md5 = md5;
 
+import VConsole from 'vconsole';
+let vconsole = new VConsole();
+export default vconsole;
+
 import 'normalize.css/normalize.css'
 import './mock/mockServer' // 加载mockServer即可
 import '@/directive/index'
