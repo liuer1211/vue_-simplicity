@@ -26,11 +26,19 @@
       export const reqHaHa = () => ajax('/haha')
       Mock.mock('/haha', {code:1, data: data.haha})
     直接使用 import {reqMainList} from '../../api/index'
-    4.使用Vuex
-    5.使用Swiper
-    6.使用UI框架
-    7.使用组件
-    8.使用路由守卫
+    4.element小图标不显示
+    解决方法：
+    修改biuld下的utils.js，ctrl+f搜索ExtractTextPlugin.extract，修改此代码块
+    return ExtractTextPlugin.extract({
+      use: loaders,
+      fallback: 'vue-style-loader',
+      publicPath: '../../'
+    })
+    5.使用Vuex
+    6.使用Swiper
+    7.使用UI框架
+    8.使用组件
+    9.使用路由守卫
 # github
     1.创建项目,上传
     echo "# vue_-simplicity" >> README.md
