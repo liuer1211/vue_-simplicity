@@ -12,7 +12,10 @@ import Mescroll from '@/page/dropDown/mescroll' // 下拉刷新，上拉加载
 import Map from '@/page/map/map' // 百度地图
 import User from '@/page/user/user' // 我的
 import Echarts from '@/page/echarts/echarts' // 图标
-import Music from '@/page/music/music' // 图标
+import Music from '@/page/music/music' // 音乐
+import Novel from '@/page/novel/novel' // 小说
+import Song from '@/page/song/song' // 歌曲
+import Poetry from '@/page/poetry/poetry' // 诗词
 
 Vue.use(Router)
 
@@ -81,6 +84,21 @@ export default new Router({
       path: '/music',
       name: 'music',
       component: Music
+    },
+    {
+      path: '/novel',
+      name: 'novel',
+      component: Novel
+    },
+    {
+      path: '/song',
+      name: 'song',
+      component: Song
+    },
+    {
+      path: '/poetry',
+      name: 'poetry',
+      component: Poetry
     }
   ]
 })

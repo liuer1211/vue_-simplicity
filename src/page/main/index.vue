@@ -29,16 +29,19 @@
         </div>
       </div>-->
     </div>
+    <div class="index-bot"></div>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
   import {reqMainList} from '../../api/index'
   import Search from '../../components/search/search'
+  import Footer from '../../components/footer/footer'
   import Start from '../../components/start/start'
   export default {
     components:{
-      Search, Start
+      Search, Start, Footer
     },
     data () {
       return {
@@ -190,6 +193,9 @@
       text-overflow: ellipsis;
       white-space: nowrap;
     }
+    .index-bot{
+      margin-bottom: 3rem;
+    }
     /*上到下  渐变*/
     .upToBottom{
       animation:upToBottom 1s ;
@@ -209,6 +215,5 @@
       0% {opacity: 0;}
       100% {opacity: 1;}
     }
-
   }
 </style>

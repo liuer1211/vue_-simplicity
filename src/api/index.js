@@ -12,3 +12,12 @@ export const reqSwiperList = () => ajax('/swiperList')
 // 新闻列表
 export const reqNewsList = () => ajax('/newsList')
 
+// 小说列表
+export const reqNovelList = () => ajax('/novelList')
+
+// 歌曲列表
+export const reqSongList = () => ajax('/songList')
+
+// 诗词列表
+export const reqPoetryList = () => ajax('/poetryList')
+
