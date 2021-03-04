@@ -89,6 +89,11 @@
       background: #cccccc;
       border-radius: 50%;
       color: #000;
+      width: 1.2rem;
+      height: 1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       &.active{
         background: #e0931f;
         font-weight: 600;
