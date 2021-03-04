@@ -50,6 +50,7 @@
       .novel-a{
         display: inline-block;
         color: #fff;
+        width: 100%;
       }
       .novel-model{
         padding: 0.6rem;
