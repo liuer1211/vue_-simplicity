@@ -180,51 +180,15 @@
         songList: [
           {
             num: '01',
-            song: '沧海一声笑沧海一声笑沧海一声笑沧海一声笑沧海一声笑',
-            singer: '许冠杰',
-            time: '3:45'
-          },
-          {
-            num: '01',
             song: '沧海一声笑',
             singer: '许冠杰',
             time: '3:45'
           },
           {
-            num: '01',
-            song: '沧海一声笑',
-            singer: '许冠杰',
-            time: '3:45'
-          },
-          {
-            num: '01',
-            song: '沧海一声笑',
-            singer: '许冠杰',
-            time: '3:45'
-          },
-          {
-            num: '01',
-            song: '沧海一声笑',
-            singer: '许冠杰',
-            time: '3:45'
-          },
-          {
-            num: '01',
-            song: '沧海一声笑',
-            singer: '许冠杰',
-            time: '3:45'
-          },
-          {
-            num: '01',
-            song: '沧海一声笑',
-            singer: '许冠杰',
-            time: '3:45'
-          },
-          {
-            num: '01',
-            song: '沧海一声笑',
-            singer: '许冠杰',
-            time: '3:45'
+            num: '02',
+            song: '云裳羽衣曲',
+            singer: '周深',
+            time: '4:57'
           }
         ] // 歌列表
       }

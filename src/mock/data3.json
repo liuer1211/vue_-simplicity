@@ -1,0 +1,276 @@
+{
+    "mainList": [
+      {
+        "id" : "1",
+        "img": "https://cn.bing.com/th?id=OHR.HolidayNubble_ZH-CN8122183595_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+        "tit": "登陆",
+        "cen": "极简风格",
+        "score": 5
+      },
+      {
+        "id" : "2",
+        "img": "https://cn.bing.com/th?id=OHR.HolidayNubble_ZH-CN8122183595_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+        "tit": "九宫格",
+        "cen": "极简风格",
+        "score": 4
+      },
+      {
+        "id" : "3.1",
+        "img": "https://cn.bing.com/th?id=OHR.BabyGoat_ZH-CN7863798344_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+        "tit": "置顶",
+        "cen": "极简风格",
+        "score": 3.2
+      },
+      {
+        "id" : "4",
+        "img": "https://cn.bing.com/th?id=OHR.TreCime_ZH-CN7609469681_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+        "tit": "无限滚动",
+        "cen": "极简风格",
+        "score": 2.5
+      },
+      {
+        "id" : "7",
+        "img": "https://cn.bing.com/th?id=OHR.QueenoftheAndes_ZH-CN9019108680_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+        "tit": "新闻",
+        "cen": "极简风格",
+        "score": 4.1
+      },
+      {
+        "id" : "8",
+        "img": "https://cn.bing.com/th?id=OHR.WildReindeer_ZH-CN8301029606_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+        "tit": "列表",
+        "cen": "极简风格",
+        "score": 0
+      },
+      {
+        "id" : "9",
+        "img": "https://cn.bing.com/th?id=OHR.WildReindeer_ZH-CN8301029606_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+        "tit": "百度地图",
+        "cen": "极简风格",
+        "score": 0
+      },
+      {
+        "id" : "10",
+        "img": "https://cn.bing.com/th?id=OHR.WildReindeer_ZH-CN8301029606_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+        "tit": "我的",
+        "cen": "极简风格",
+        "score": 3.7
+      },
+      {
+        "id" : "11",
+        "img": "https://cn.bing.com/th?id=OHR.PolarExpress_ZH-CN9522496479_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+        "tit": "图表",
+        "cen": "极简风格",
+        "score": 4.1
+      },
+      {
+        "id" : "12",
+        "img": "https://cn.bing.com/th?id=OHR.WildReindeer_ZH-CN8301029606_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+        "tit": "音乐",
+        "cen": "极简风格",
+        "score": 4.1
+      },
+      {
+        "id" : "13",
+        "img": "https://cn.bing.com/th?id=OHR.WildReindeer_ZH-CN8301029606_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+        "tit": "游戏",
+        "cen": "极简风格",
+        "score": 4.1
+      }
+    ],
+    "swiperList": [
+      {
+        "name": "phone",
+        "icon": "phone-o"
+      },
+      {
+        "name": "star",
+        "icon": "star-o"
+      },
+      {
+        "name": "setting",
+        "icon": "setting-o"
+      },
+      {
+        "name": "fire",
+        "icon": "fire-o"
+      },
+      {
+        "name": "coupon",
+        "icon": "coupon-o"
+      },
+      {
+        "name": "cart",
+        "icon": "cart-o"
+      },
+      {
+        "name": "friends",
+        "icon": "friends-o"
+      },
+      {
+        "name": "comment",
+        "icon": "comment-o"
+      },
+      {
+        "name": "gem",
+        "icon": "gem-o"
+      },
+      {
+        "name": "gift",
+        "icon": "gift-o"
+      },
+      {
+        "name": "service",
+        "icon": "service-o"
+      },
+      {
+        "name": "balance",
+        "icon": "balance-list-o"
+      },
+      {
+        "name": "music",
+        "icon": "music-o"
+      },
+      {
+        "name": "smile",
+        "icon": "smile-o"
+      }
+    ],
+    "newsList": [
+      {
+        "title": "风景如画，林海雪原，银装素裹",
+        "name": "汤姆&杰瑞",
+        "date": "2020-12-25",
+        "address": "地球的某个角落",
+        "img": "https://cn.bing.com/th?id=OHR.NarniaForest_ZH-CN8466850438_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+        "hot": "1"
+      },
+      {
+        "title": "风景如画",
+        "name": "汤姆&杰瑞",
+        "date": "2020-12-25",
+        "address": "小树林",
+        "img": "https://cn.bing.com/th?id=OHR.HolidayNubble_ZH-CN8122183595_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+        "hot": "0"
+      },
+      {
+        "title": "风景如画",
+        "name": "汤姆&杰瑞",
+        "date": "2020-12-25",
+        "address": "小树林",
+        "img": "https://cn.bing.com/th?id=OHR.BabyGoat_ZH-CN7863798344_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+        "hot": ""
+      },
+      {
+        "title": "风景如画",
+        "name": "汤姆&杰瑞",
+        "date": "2020-12-25",
+        "address": "小树林",
+        "img": "https://cn.bing.com/th?id=OHR.TreCime_ZH-CN7609469681_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+        "hot": ""
+      },
+      {
+        "title": "风景如画",
+        "name": "汤姆&杰瑞",
+        "date": "2020-12-25",
+        "address": "小树林",
+        "img": "https://cn.bing.com/th?id=OHR.PolarExpress_ZH-CN9522496479_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+        "hot": "1"
+      },
+      {
+        "title": "风景如画",
+        "name": "汤姆&杰瑞",
+        "date": "2020-12-25",
+        "address": "小树林",
+        "img": "https://cn.bing.com/th?id=OHR.QueenoftheAndes_ZH-CN9019108680_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+        "hot": "1"
+      },
+      {
+        "title": "风景如画",
+        "name": "汤姆&杰瑞",
+        "date": "2020-12-25",
+        "address": "小树林",
+        "img": "https://cn.bing.com/th?id=OHR.WildReindeer_ZH-CN8301029606_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+        "hot": "1"
+      },
+      {
+        "title": "风景如画",
+        "name": "汤姆&杰瑞",
+        "date": "2020-12-25",
+        "address": "小树林",
+        "img": "https://cn.bing.com/th?id=OHR.FRbluebirds_ZH-CN3972483010_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4&r=0",
+        "hot": "1"
+      },
+      {
+        "title": "风景如画",
+        "name": "汤姆&杰瑞",
+        "date": "2020-12-25",
+        "address": "小树林",
+        "img": "https://cn.bing.com/th?id=OHR.Siguniangshan_ZH-CN7772066391_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+        "hot": "1"
+      },
+      {
+        "title": "风景如画",
+        "name": "汤姆&杰瑞",
+        "date": "2020-12-25",
+        "address": "小树林",
+        "img": "https://cn.bing.com/th?id=OHR.CastleriggStone_ZH-CN8015482045_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+        "hot": "1"
+      },
+      {
+        "title": "风景如画",
+        "name": "汤姆&杰瑞",
+        "date": "2020-12-25",
+        "address": "小树林",
+        "img": "https://cn.bing.com/th?id=OHR.BandedPipefish_ZH-CN8209616080_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+        "hot": "1"
+      },
+      {
+        "title": "风景如画",
+        "name": "汤姆&杰瑞",
+        "date": "2020-12-25",
+        "address": "小树林",
+        "img": "https://cn.bing.com/th?id=OHR.SeaFort_EN-CN8553015223_800x480.jpg",
+        "hot": "1"
+      }
+    ],
+    "novelList": [
+      {
+        "name": "血雨江湖",
+        "date": "2018-06-14",
+        "introduce": "侠之大者，为国为民",
+        "img": "http://static.zongheng.com/upload/cover/84/fa/84fa89d8865057186201f2cf445c002a.jpeg",
+        "hot": "最新",
+        "hrefUrl": "http://book.zongheng.com/book/752647.html"
+      },
+      {
+        "name": "夜灵犀传奇",
+        "date": "2020-12-25",
+        "introduce": "武林风雨几时休，一入江湖难再出。",
+        "img": "http://static.zongheng.com/upload/cover/80/04/8004b26bd369e2312ee26a797af4a1fe.jpeg",
+        "hot": "最新",
+        "hrefUrl": "https://m.zongheng.com/h5/book?bookid=1075297"
+      }
+    ],
+    "songList": [
+      {
+        "name": "夜来随笔·印双人",
+        "date": "2021-01-24",
+        "introduce": "重山美景皆不是，轻舟晓雾印双人。",
+        "img": "https://copyright.bdstatic.com/560211163,570602845.jpg@c_1,w_1344,h_896,x_0,y_1120",
+        "hot": "最新",
+        "hrefUrl": "https://mbd.baidu.com/newspage/data/landingshare?preview=1&pageType=1&isBdboxFrom=1&context=%7B%22nid%22%3A%22news_10414091074846170374%22%2C%22sourceFrom%22%3A%22bjh%22%7D"
+      }
+    ],
+    "poetryList" : [
+      {
+        "name": "夜来随笔·落日有感",
+        "date": "2020-05-06",
+        "introduce": "落日照大地，余晖暖山丘。",
+        "img": "https://copyright.bdstatic.com/quanjing/creative/6a1ffbcb0f5a18364089f837754c0cb7.jpg@c_1,w_2036,h_1364,x_10,y_0",
+        "hot": "最新",
+        "hrefUrl": "https://mbd.baidu.com/newspage/data/landingshare?preview=1&pageType=1&isBdboxFrom=1&context=%7B%22nid%22%3A%22news_9557225277814517583%22%2C%22sourceFrom%22%3A%22bjh%22%7D"
+      }
+    ]
+  }
+  

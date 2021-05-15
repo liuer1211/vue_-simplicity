@@ -47,7 +47,7 @@
         <div><van-button @click="toSubmit()" round block type="info" native-type="submit">提交</van-button></div>
       </div>
     </van-popup>
-    <van-popup v-model="leftShow" position="left" :style="{ width: '40%',height: '100%' }">
+    <van-popup v-model="leftShow" closeable position="left" :style="{ width: '45%',height: '100%' }">
     </van-popup>
   </div>
 </template>
@@ -78,7 +78,7 @@
           {
             year: '2021-01-03',
             infoList: [
-              {title:'约会',cen:'九宫格火锅店',date:'12:00'}
+              {title:'约会',cen:'火锅，teamLab无界美术馆，回家',date:'11:30'}
             ]
           }
         ]
