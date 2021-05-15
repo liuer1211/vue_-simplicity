@@ -96,6 +96,9 @@
           case '12':
             this.$router.push({name:'music'})
             return
+          case '13':
+          this.$router.push({name:'game'})
+          return
           default:
             this.getTip()
             return;

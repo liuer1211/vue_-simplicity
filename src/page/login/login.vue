@@ -6,8 +6,8 @@
       <van-icon name="contact" />
     </div>
     <div class="login-model">
-      <el-input v-model="userName" placeholder="请输入用户名/账号/手机号"></el-input>
-      <el-input v-model="userPassword" placeholder="请输入密码"></el-input>
+      <el-input v-model="userName" placeholder="请任意输入用户名/账号/手机号"></el-input>
+      <el-input v-model="userPassword" placeholder="请任意输入密码"></el-input>
     </div>
     <div class="login-but">
       <el-button @click="toLogin()">登陆</el-button>

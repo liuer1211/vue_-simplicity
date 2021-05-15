@@ -16,6 +16,7 @@ import Music from '@/page/music/music' // 音乐
 import Novel from '@/page/novel/novel' // 小说
 import Song from '@/page/song/song' // 歌曲
 import Poetry from '@/page/poetry/poetry' // 诗词
+import Game from '@/page/game/game' // 诗词
 
 Vue.use(Router)
 
@@ -99,6 +100,11 @@ export default new Router({
       path: '/poetry',
       name: 'poetry',
       component: Poetry
+    },
+    {
+      path: '/game',
+      name: 'game',
+      component: Game
     }
   ]
 })

@@ -69,6 +69,13 @@
       "tit": "音乐",
       "cen": "极简风格",
       "score": 4.1
+    },
+    {
+      "id" : "13",
+      "img": "https://cn.bing.com/th?id=OHR.WildReindeer_ZH-CN8301029606_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+      "tit": "游戏",
+      "cen": "极简风格",
+      "score": 4.1
     }
   ],
   "swiperList": [
@@ -228,6 +235,14 @@
     }
   ],
   "novelList": [
+    {
+      "name": "血雨江湖",
+      "date": "2018-06-14",
+      "introduce": "侠之大者，为国为民",
+      "img": "http://static.zongheng.com/upload/cover/84/fa/84fa89d8865057186201f2cf445c002a.jpeg",
+      "hot": "最新",
+      "hrefUrl": "http://book.zongheng.com/book/752647.html"
+    },
     {
       "name": "夜灵犀传奇",
       "date": "2020-12-25",
