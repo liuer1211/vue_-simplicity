@@ -15,6 +15,7 @@ import BaiduMap from 'vue-baidu-map'
 // import animated from 'animate.css'
 import vant from 'vant';
 import 'vant/lib/index.css';
+import { Toast } from 'vant';
 import echarts from 'echarts'
 Vue.prototype.$echarts = echarts
 import '../node_modules/echarts/map/js/china.js' // 引入中国地图
@@ -41,6 +42,7 @@ Vue.use(BaiduMap, {
 });
 // Vue.use(VueScrollProgress)
 Vue.use(vant)
+Vue.use(Toast);
 
 Vue.config.productionTip = false
 
