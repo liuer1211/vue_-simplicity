@@ -16,7 +16,8 @@ import Music from '@/page/music/music' // 音乐
 import Novel from '@/page/novel/novel' // 小说
 import Song from '@/page/song/song' // 歌曲
 import Poetry from '@/page/poetry/poetry' // 诗词
-import Game from '@/page/game/game' // 诗词
+import Game from '@/page/game/game' // 游戏
+import Achievement from '@/page/achievement/achievement' // 成就
 
 Vue.use(Router)
 
@@ -105,6 +106,11 @@ export default new Router({
       path: '/game',
       name: 'game',
       component: Game
+    },
+    {
+      path: '/achievement',
+      name: 'achievement',
+      component: Achievement
     }
   ]
 })

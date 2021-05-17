@@ -100,7 +100,7 @@
         color: #fff;
       }
       .foot-model-sp{
-        font-size: 0.2rem;
+        font-size: 0.6rem;
       }
     }
   }

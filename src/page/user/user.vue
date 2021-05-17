@@ -48,6 +48,13 @@
       </div>
     </van-popup>
     <van-popup v-model="leftShow" closeable position="left" :style="{ width: '45%',height: '100%' }">
+      <div class="model-main">
+        <van-cell-group>
+          <van-cell @click="toPage()" title="我的成就"/>
+          <van-cell @click="toPage()" title="我的成就"/>
+          <van-cell @click="toPage()" title="我的成就"/>
+        </van-cell-group>
+      </div>
     </van-popup>
   </div>
 </template>
@@ -278,6 +285,10 @@
       // 左侧菜单
       getLeftMenu(){
         this.leftShow = true
+      },
+      // 左侧菜单栏
+      toPage() {
+        this.$router.push({path:"/achievement"})
       }
     },
     mounted(){
@@ -442,6 +453,14 @@
       box-sizing: border-box;
       >div{
         cursor: pointer;
+      }
+    }
+    .model-main {
+      margin-top: 2rem;
+      .van-cell {
+        cursor: pointer;
+        background: #7547ff;
+        color: #fff;
       }
     }
     /deep/ .van-popup{

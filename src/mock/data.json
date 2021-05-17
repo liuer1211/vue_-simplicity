@@ -8,6 +8,13 @@
       "score": 5
     },
     {
+      "id" : "13",
+      "img": "https://cn.bing.com/th?id=OHR.PolarExpress_ZH-CN9522496479_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+      "tit": "游戏",
+      "cen": "极简风格",
+      "score": 4.1
+    },
+    {
       "id" : "2",
       "img": "https://cn.bing.com/th?id=OHR.TreCime_ZH-CN7609469681_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
       "tit": "九宫格",
@@ -22,11 +29,11 @@
       "score": 4.1
     },
     {
-      "id" : "13",
-      "img": "https://cn.bing.com/th?id=OHR.PolarExpress_ZH-CN9522496479_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
-      "tit": "游戏",
+      "id" : "4",
+      "img": "https://cn.bing.com/th?id=OHR.TreCime_ZH-CN7609469681_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+      "tit": "无限滚动",
       "cen": "极简风格",
-      "score": 4.1
+      "score": 2.5
     }
   ],
   "swiperList": [
