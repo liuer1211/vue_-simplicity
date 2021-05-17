@@ -25,7 +25,7 @@
             当前能量：{{energy}}<br/>
             当前难易度：{{datas.grade}}
             <div class="model-img">
-                <img src="../../assets/img/game/card/s1.jpg"/>
+                <img src="https://liuer1211.github.io/vue_-simplicity/static/img/game/card/s1.jpg"/>
             </div>
             <van-button type="info" @click="isModel=false">确定</van-button>
         </div>

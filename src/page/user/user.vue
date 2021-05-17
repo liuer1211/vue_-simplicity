@@ -33,7 +33,7 @@
     </div>
     <div class="user-plan-add">
       <div @click="showPopup">
-        <img src="../../assets/img/common/add.jpg"/>
+        <img src="https://liuer1211.github.io/vue_-simplicity/static/img/common/add.jpg"/>
       </div>
     </div>
     <van-popup v-model="show" closeable>
