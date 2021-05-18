@@ -1,5 +1,6 @@
 <template>
   <div class="game-main">
+    <!-- 题目 -->
     <div v-for="(item,index) in datas.list" :key="index">
         <div class="card-main" :class="item.className" v-if="item.isShow">
             <div class="card">
@@ -15,10 +16,12 @@
             <div class="finish" v-if="item.isFinish">完成</div>
         </div>
     </div>
+    <!-- 查看 -->
     <div class="model-look" v-if="isModelBut">
         <van-button type="info" @click="isModel=true">查看战绩</van-button>
         <van-button type="primary" class="next" @click="toNext()">下一关</van-button>
     </div>
+    <!-- 战绩 -->
     <van-popup v-model="isModel" round :close-on-click-overlay="false" :duration="0.5" :style="{ height: '60%',width: '80%' }">
         <div class="model-main">
             当前关卡：{{datas.level}}<br/>
@@ -30,79 +33,112 @@
             <van-button type="info" @click="isModel=false">确定</van-button>
         </div>
     </van-popup>
+    <!-- 刮刮乐 -->
+    <vue-scratchable
+      v-slot="{ init }"
+      :brushOptions="brush"
+      :hideOptions="hide"
+      getPercentageCleared
+      @percentageUpdate="updatePoints"
+    >
+      <div class="wrapper">
+        <img
+          src="https://liuer1211.github.io/vue_-simplicity/static/img/game/card/s2.jpg"
+          @load="init()"
+        >
+        <h3>{{ subline }}</h3>
+      </div>
+    </vue-scratchable>
   </div>
 </template>
 
 <script>
-  import { eleUtil } from '@/assets/js/util'
-  import { setCookie } from '@/assets/js/support' // cookie缓存
-  import { setToken } from '@/assets/js/auth' // 验权
+  import VueScratchable from 'vue-scratchable';
   export default {
+    components: {
+        VueScratchable,
+    },
+    computed:{
+        subline() {
+            return this.percentage < 100 ? `🎉 There is still ${100 - this.percentage}% left for me to be free... 🎉`
+            : '💚 Thank you for scratching me free! 💚';
+        }
+    },
     data () {
       return {
-          datas: {
-            list: [
-            {
-                cen: "1.地球是个不发光又不透明的球体，同一瞬间没被太阳照到的地球是?",
-                select: [
-                    {
-                        code: "1",
-                        name: "A.黑夜",
-                        answer: true
-                    },
-                    {
-                        code: "2",
-                        name: "B.背面",
-                        answer: false
-                    }
+            datas: {
+                list: [
+                {
+                    cen: "1.地球是个不发光又不透明的球体，同一瞬间没被太阳照到的地球是?",
+                    select: [
+                        {
+                            code: "1",
+                            name: "A.黑夜",
+                            answer: true
+                        },
+                        {
+                            code: "2",
+                            name: "B.背面",
+                            answer: false
+                        }
+                    ],
+                    className: "card-one",
+                    // isShow: true,
+                    // isFinish: false
+                },
+                {
+                    cen: "2.陆地资源卫星是以勘测什么为主的卫星？",
+                    select: [
+                        {
+                            code: "1",
+                            name: "A.森林",
+                            answer: false
+                        },
+                        {
+                            code: "2",
+                            name: "B.陆地",
+                            answer: true
+                        }
+                    ],
+                    className: "card-two",
+                    // isShow: false
+                },
+                {
+                    cen: "3.'一诺千金'指的是谁？",
+                    select: [
+                        {
+                            code: "1",
+                            name: "A.季布",
+                            answer: true
+                        },
+                        {
+                            code: "2",
+                            name: "B.吕布",
+                            answer: false
+                        }
+                    ],
+                    className: "card-three",
+                    // isShow: false
+                }
                 ],
-                className: "card-one",
-                // isShow: true,
-                // isFinish: false
+                level: 1, // 第几关：1 2 3
+                grade: "初级" // 难易程度：初级 中级 高级
             },
-            {
-                cen: "2.陆地资源卫星是以勘测什么为主的卫星？",
-                select: [
-                    {
-                        code: "1",
-                        name: "A.森林",
-                        answer: false
-                    },
-                    {
-                        code: "2",
-                        name: "B.陆地",
-                        answer: true
-                    }
-                ],
-                className: "card-two",
-                // isShow: false
+            num: 0, // 正确个数
+            energy: 0, // 能量
+            isModel: false,
+            isModelBut: false,
+            percentage: 0,
+            hide: {
+                type: 'pattern',
+                src: "https://liuer1211.github.io/vue_-simplicity/static/img/game/card/s1.jpg",
+                repeat: 'repeat',
             },
-            {
-                cen: "3.'一诺千金'指的是谁？",
-                select: [
-                    {
-                        code: "1",
-                        name: "A.季布",
-                        answer: true
-                    },
-                    {
-                        code: "2",
-                        name: "B.吕布",
-                        answer: false
-                    }
-                ],
-                className: "card-three",
-                // isShow: false
-            }
-            ],
-            level: 1, // 第几关：1 2 3
-            grade: "初级" // 难易程度：初级 中级 高级
-          },
-          num: 0, // 正确个数
-          energy: 0, // 能量
-          isModel: false,
-          isModelBut: false
-      }
+            brush: {
+                size: 60,
+                shape: 'round',
+            },
+        }
     },
     methods: {
         // 提示
@@ -251,12 +287,16 @@
                 grade: "中级" // 难易程度：初级 中级 高级
             },
             this.getDatas();
-        }
+        },
+        updatePoints(percentage) {
+            this.percentage = percentage;
+        },
     },
     created() {
         this.getDatas();
     },
     mounted(){
+        
     },
     beforeDestroy(){
     }
