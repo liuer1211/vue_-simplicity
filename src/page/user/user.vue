@@ -1,5 +1,6 @@
 <template>
   <div class="user-main">
+    <!-- 介绍 -->
     <div class="user-main-up">
       <div class="user-up-f1">
         <img class="user-up-img" src="https://cn.bing.com/th?id=OHR.NarniaForest_ZH-CN8466850438_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4"/>
@@ -13,6 +14,15 @@
         <span>{{year}}</span>
       </div>
     </div>
+    <div class="user-manu">
+      <van-grid>
+        <van-grid-item icon="like-o" text="关注" @click="toPage"/>
+        <van-grid-item icon="fire-o" text="最热" @click="toPage"/>
+        <van-grid-item icon="gift-o" text="礼品" @click="toPage"/>
+        <van-grid-item icon="service-o" text="听歌" @click="toPage"/>
+      </van-grid>
+    </div>
+    <!-- 计划 -->
     <div class="user-main-bot">
       <div class="user-plan-tit">今日计划</div>
       <div class="user-plan-cen" v-for="(item,index) in list" :key="index">
@@ -31,11 +41,13 @@
         </div>
       </div>
     </div>
+    <!-- 添加 -->
     <div class="user-plan-add">
       <div @click="showPopup">
         <img src="https://liuer1211.github.io/vue_-simplicity/static/img/common/add.jpg"/>
       </div>
     </div>
+    <!-- 添加面板 -->
     <van-popup v-model="show" closeable>
       <div class="user-pop-main">
         <div><van-field v-model="title" placeholder="请输入标题,最多10个字" maxlength="10"/></div>
@@ -47,11 +59,10 @@
         <div><van-button @click="toSubmit()" round block type="info" native-type="submit">提交</van-button></div>
       </div>
     </van-popup>
+    <!-- 左侧 -->
     <van-popup v-model="leftShow" closeable position="left" :style="{ width: '45%',height: '100%' }">
       <div class="model-main">
         <van-cell-group>
-          <van-cell @click="toPage()" title="我的成就"/>
-          <van-cell @click="toPage()" title="我的成就"/>
           <van-cell @click="toPage()" title="我的成就"/>
         </van-cell-group>
       </div>
@@ -85,7 +96,7 @@
           {
             year: '2021-01-03',
             infoList: [
-              {title:'约会',cen:'火锅，teamLab无界美术馆，回家',date:'11:30'}
+              {title:'约会',cen:'火锅，teamLab无界美术馆，看星星',date:'11:30'}
             ]
           }
         ]
@@ -342,6 +353,18 @@
         }
       }
     }
+    .user-manu {
+        padding: .8rem;
+        color: #ff863f;
+        .van-grid {
+          border-radius: .2rem;
+          overflow: hidden;
+          cursor: pointer;
+          /deep/ .van-grid-item__text {
+            color: #ff9133;
+          }
+        }
+    }
     .user-main-bot{
       padding: 0.8rem;
       .user-plan-tit{
@@ -459,7 +482,7 @@
       margin-top: 2rem;
       .van-cell {
         cursor: pointer;
-        background: #7547ff;
+        background: #ed8d48;
         color: #fff;
       }
     }

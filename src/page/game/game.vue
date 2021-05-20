@@ -114,7 +114,6 @@
             energy: 0, // 能量
             isModel: false,
             isModelBut: false,
-            percentage: 0,
             imgsrc: '',
             type: 0,
         }
