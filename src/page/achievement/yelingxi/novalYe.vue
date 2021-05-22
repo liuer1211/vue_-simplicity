@@ -66,6 +66,7 @@
 			cursor: pointer;
             display: flex;
             align-items: center;
+            box-shadow: 0px 2px 4px 1px #511cd0;
             .model-ye-main-l {
                 width: 5rem;
                 height: 5rem;
@@ -75,6 +76,8 @@
                     height: 100%;
                     display: block;
                     object-fit: cover;
+                    opacity: 0.4;
+                    border-radius: .2rem;
                 }
             }
             .model-ye-main-r {
