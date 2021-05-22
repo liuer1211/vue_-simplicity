@@ -50,6 +50,8 @@
     },
     computed:{
     },
+    watch: {
+    },
     data () {
       return {
             datas: {
@@ -112,8 +114,8 @@
             },
             num: 0, // 正确个数
             energy: 0, // 能量
-            isModel: false,
-            isModelBut: false,
+            isModel: false, // 弹窗显示隐藏
+            isModelBut: false, // 按钮显示影藏
             imgsrc: '',
             type: 0,
         }
@@ -377,6 +379,7 @@
         this.getDatas();
     },
     mounted(){
+        // 画布
         this.greenType();
     },
     beforeDestroy(){

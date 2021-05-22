@@ -14,6 +14,7 @@
         <span>{{year}}</span>
       </div>
     </div>
+    <!-- 菜单 -->
     <div class="user-manu">
       <van-grid>
         <van-grid-item icon="like-o" text="关注" @click="toPage"/>
@@ -44,7 +45,7 @@
     <!-- 添加 -->
     <div class="user-plan-add">
       <div @click="showPopup">
-        <img src="https://liuer1211.github.io/vue_-simplicity/static/img/common/add.jpg"/>
+        <van-icon name="plus" />
       </div>
     </div>
     <!-- 添加面板 -->
@@ -506,8 +507,7 @@
     }
     /deep/ .van-button--info {
       color: #fff;
-      background-color: #0e0e0e;
-      border: 1px solid #3d4145;
+      background-color: #378aff;
     }
   }
 </style>
