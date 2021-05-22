@@ -4,9 +4,10 @@
     <div class="ach-main-model">
         <div class="ach-main-img" v-for="(item, index) in dataList" :key="index" @click="toPage(item.number)">
 			<div class="ach-main-img-up">
-				<img class="book-name-img" :src="item.bookNameImg" />
-				<img class="book-name-i" :src="item.bookNameImg1" />
-				<!-- <img class="book-name-i" src="../../assets/img/game/noval/y2.png" /> -->
+				<img class="book-name-img" :src="item.bookNameImg1" />
+				<img class="book-name-i" :src="item.bookNameImg2" />
+				<img class="book-name-h" :src="item.bookNameImg3" />
+				<!-- <img class="book-name-h" src="../../assets/img/game/noval/y4.png" /> -->
 			</div>
         </div>
     </div>
@@ -21,8 +22,9 @@
 			  {
 				  number: "001",
 				  name: "夜灵犀传奇",
-				  bookNameImg: "https://liuer1211.github.io/vue_-simplicity/static/img/game/noval/y1.png",
-				  bookNameImg1: "https://liuer1211.github.io/vue_-simplicity/static/img/game/noval/y2.png"
+				  bookNameImg1: "https://liuer1211.github.io/vue_-simplicity/static/img/game/noval/y1.png",
+				  bookNameImg2: "https://liuer1211.github.io/vue_-simplicity/static/img/game/noval/y2.png",
+				  bookNameImg3: "https://liuer1211.github.io/vue_-simplicity/static/img/game/noval/y3.png"
 			  }
 		  ]
       }
@@ -91,6 +93,16 @@
 					display: block;
 					right: 30%;
 					top: 52%;
+				}
+				.book-name-h {
+					position: absolute;
+					width: 4rem;
+					-o-object-fit: cover;
+					object-fit: cover;
+					display: block;
+					left: 6%;
+					top: 11%;
+					opacity: 0.1;
 				}
 			}
         }
