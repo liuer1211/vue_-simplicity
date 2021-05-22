@@ -5,6 +5,8 @@
         <div class="ach-main-img" v-for="(item, index) in dataList" :key="index" @click="toPage(item.number)">
 			<div class="ach-main-img-up">
 				<img class="book-name-img" :src="item.bookNameImg" />
+				<img class="book-name-i" :src="item.bookNameImg1" />
+				<!-- <img class="book-name-i" src="../../assets/img/game/noval/y2.png" /> -->
 			</div>
         </div>
     </div>
@@ -19,7 +21,8 @@
 			  {
 				  number: "001",
 				  name: "夜灵犀传奇",
-				  bookNameImg: "https://liuer1211.github.io/vue_-simplicity/static/img/game/noval/y1.png"
+				  bookNameImg: "https://liuer1211.github.io/vue_-simplicity/static/img/game/noval/y1.png",
+				  bookNameImg1: "https://liuer1211.github.io/vue_-simplicity/static/img/game/noval/y2.png"
 			  }
 		  ]
       }
@@ -73,11 +76,21 @@
 				.book-name-img {
 					position: absolute;
 					width: 2.5rem;
+					height: 7.5rem;
 					-o-object-fit: cover;
 					object-fit: cover;
 					display: block;
-					right: 5%;
-					top: 7%;
+					right: 3%;
+					top: 6%;
+				}
+				.book-name-i {
+					position: absolute;
+					width: 1.5rem;
+					-o-object-fit: cover;
+					object-fit: cover;
+					display: block;
+					right: 30%;
+					top: 52%;
 				}
 			}
         }
