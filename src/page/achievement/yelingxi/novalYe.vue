@@ -28,6 +28,14 @@
                 introduce: "夜灵犀",
                 img: "https://liuer1211.github.io/vue_-simplicity/static/img/game/noval/y4.png",
                 compons: ["Yelingxi001","Suwan001"] // 组件 参数
+            },
+            {
+                number: "001",
+                name: "夜灵犀",
+                skill: "燕云七绝/乾坤生死诀",
+                introduce: "夜灵犀",
+                img: "https://liuer1211.github.io/vue_-simplicity/static/img/game/noval/y4.png",
+                compons: ["Yelingxi001","Suwan001"] // 组件 参数
             }
         ]
       }
@@ -67,6 +75,7 @@
             display: flex;
             align-items: center;
             box-shadow: 0px 2px 4px 1px #511cd0;
+            margin-bottom: .8rem;
             .model-ye-main-l {
                 width: 5rem;
                 height: 5rem;
