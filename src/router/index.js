@@ -18,6 +18,8 @@ import Song from '@/page/song/song' // 歌曲
 import Poetry from '@/page/poetry/poetry' // 诗词
 import Game from '@/page/game/game' // 游戏
 import Achievement from '@/page/achievement/achievement' // 成就
+import NovalYe from '@/page/achievement/yelingxi/novalYe' // 小说-夜灵犀传奇
+import NovalYeMain from '@/page/achievement/yelingxi/model/novalYeMain' // 小说-夜灵犀传奇
 
 Vue.use(Router)
 
@@ -111,6 +113,16 @@ export default new Router({
       path: '/achievement',
       name: 'achievement',
       component: Achievement
+    },
+    {
+      path: '/novalYe',
+      name: 'novalYe',
+      component: NovalYe,
+    },
+    {
+      path: '/novalYeMain',
+      name: 'novalYeMain',
+      component: NovalYeMain,
     }
   ]
 })
