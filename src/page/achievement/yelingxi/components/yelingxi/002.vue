@@ -1,8 +1,6 @@
 <template>
-  <div class="ye-model">
-    <div class="ye-model-cen">
-      123
-    </div>
+  <div class="model-ye-main">
+    吾问无为谓无无无无无
   </div>
 </template>
 
@@ -26,11 +24,6 @@
 </script>
 
 <style scoped lang="scss">
-  .ye-model{
-    color: #fff;
-    .ye-model-cen {
-      padding: .8rem;
-    }
-  }
+  
 </style>
 

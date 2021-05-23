@@ -24,7 +24,11 @@
         // 接受传过来的参数，判断显示的组件
         getCompontent() {
             console.log("接受组件",this.$route.params);
-            this.compons = this.$route.params.data.compons;
+            if (this.$route.params.data) {
+              this.compons = this.$route.params.data.compons;
+            } else {
+              this.$router.go(-1);//返回上一层
+            }
         }
     },
     created() {

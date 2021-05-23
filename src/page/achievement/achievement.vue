@@ -61,16 +61,14 @@
             width: 48%;
 			height: 10rem;
 			border-radius: 0.2rem;
-			background-image: -webkit-gradient(linear, left top, left bottom, from(#a25cff), to(#333ca9));
-			background-image: linear-gradient(to bottom, #a25cff, #333ca9);
+			background-image: linear-gradient(to bottom, #cea7ff, #4b58ed);
 			cursor: pointer;
 			margin: 0 0 .8rem;
 			cursor: pointer;
 			.ach-main-img-up {
 				width: 99.5%;
 				height: 10rem;
-				background-image: -webkit-gradient(linear, left top, left bottom, from(#4e1e8c), to(#3b48df));
-				background-image: linear-gradient(to bottom, #4e1e8c, #3b48df);
+				background-image: linear-gradient(to bottom, #a55fff, #4b58ed);
 				border-radius: 0.2rem;
 				-webkit-box-shadow: -3px 2px 4px 6px #431d9c;
 				box-shadow: 1px 1px 2px 0px #8969d5;

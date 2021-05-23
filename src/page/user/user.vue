@@ -20,7 +20,7 @@
         <van-grid-item icon="like-o" text="关注" @click="toPage"/>
         <van-grid-item icon="fire-o" text="最热" @click="toPage"/>
         <van-grid-item icon="gift-o" text="礼品" @click="toPage"/>
-        <van-grid-item icon="service-o" text="听歌" @click="toPage"/>
+        <van-grid-item icon="service-o" text="听书" @click="toPage"/>
       </van-grid>
     </div>
     <!-- 计划 -->
@@ -64,7 +64,10 @@
     <van-popup v-model="leftShow" closeable position="left" :style="{ width: '45%',height: '100%' }">
       <div class="model-main">
         <van-cell-group>
-          <van-cell @click="toPage()" title="我的成就"/>
+          <van-cell title="能量值" value="100"/>
+        </van-cell-group>
+        <van-cell-group>
+          <van-cell title="我的成就"/>
         </van-cell-group>
       </div>
     </van-popup>
@@ -300,7 +303,7 @@
       },
       // 左侧菜单栏
       toPage() {
-        this.$router.push({path:"/achievement"})
+        this.$router.push({path:"/achievement"});
       }
     },
     mounted(){
@@ -485,6 +488,9 @@
         cursor: pointer;
         background: #ed8d48;
         color: #fff;
+      }
+      .van-cell__value {
+          color: #efff00;
       }
     }
     /deep/ .van-popup{
