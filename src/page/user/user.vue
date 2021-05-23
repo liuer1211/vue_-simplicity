@@ -49,7 +49,7 @@
       </div>
     </div>
     <!-- 添加面板 -->
-    <van-popup v-model="show" closeable>
+    <van-popup v-model="show" closeable :close-on-click-overlay="false">
       <div class="user-pop-main">
         <div><van-field v-model="title" placeholder="请输入标题,最多10个字" maxlength="10"/></div>
         <div><van-field v-model="cen" placeholder="请输入内容,最多25个字" maxlength="25"/></div>
@@ -61,13 +61,14 @@
       </div>
     </van-popup>
     <!-- 左侧 -->
-    <van-popup v-model="leftShow" closeable position="left" :style="{ width: '45%',height: '100%' }">
+    <van-popup v-model="leftShow" closeable :close-on-click-overlay="false" position="left" :style="{ width: '45%',height: '100%' }">
       <div class="model-main">
         <van-cell-group>
           <van-cell title="能量值" value="100"/>
         </van-cell-group>
         <van-cell-group>
           <van-cell title="我的成就"/>
+          <van-cell title="我的战绩"/>
         </van-cell-group>
       </div>
     </van-popup>

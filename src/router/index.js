@@ -22,6 +22,12 @@ import NovalYe from '@/page/achievement/yelingxi/novalYe' // 小说-夜灵犀传
 import NovalYeMain from '@/page/achievement/yelingxi/model/novalYeMain' // 小说-夜灵犀传奇
 
 Vue.use(Router)
+// 避免到当前位置的冗余导航。 简单来说就是重复触发了同一个路由。
+const originalPush = Router.prototype.push
+
+Router.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
 
 export default new Router({
   routes: [

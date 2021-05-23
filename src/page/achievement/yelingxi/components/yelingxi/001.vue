@@ -1,7 +1,11 @@
 <template>
   <div class="ye-model">
     <div class="ye-model-cen">
-      123
+      人物
+      师承
+      武功绝技
+      相关好友
+      成名事迹
     </div>
   </div>
 </template>

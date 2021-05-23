@@ -6,7 +6,7 @@
 			<div class="ach-main-img-up">
 				<img class="book-name-img" :src="item.bookNameImg1" />
 				<img class="book-name-i" :src="item.bookNameImg2" />
-				<img class="book-name-h" :src="item.bookNameImg3" />
+				<!-- <img class="book-name-h" :src="item.bookNameImg3" /> -->
 				<!-- <img class="book-name-h" src="../../assets/img/game/noval/y4.png" /> -->
 			</div>
         </div>
@@ -24,7 +24,7 @@
 				  name: "夜灵犀传奇",
 				  bookNameImg1: "https://liuer1211.github.io/vue_-simplicity/static/img/game/noval/y1.png",
 				  bookNameImg2: "https://liuer1211.github.io/vue_-simplicity/static/img/game/noval/y2.png",
-				  bookNameImg3: "https://liuer1211.github.io/vue_-simplicity/static/img/game/noval/y3.png"
+				//   bookNameImg3: "https://liuer1211.github.io/vue_-simplicity/static/img/game/noval/y3.png"
 			  }
 		  ]
       }
