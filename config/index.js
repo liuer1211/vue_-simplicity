@@ -9,8 +9,8 @@ module.exports = {
 
     // Paths
     assetsSubDirectory: 'static',
-    // assetsPublicPath: './',  // 发包
-    assetsPublicPath: '/',  // 不发包
+    assetsPublicPath: './',  // 发包
+    // assetsPublicPath: '/',  // 不发包
     proxyTable: {},
 
     // Various Dev Server settings
