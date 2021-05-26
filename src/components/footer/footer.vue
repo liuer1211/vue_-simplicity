@@ -1,18 +1,18 @@
 <template>
   <div class="foot-main">
-    <div class="foot-model active" @click="toPage('1')">
+    <div class="foot-model" :class="path=='/index'? 'active' : ''" @click="toPage('1')">
       <span class="foot-model-sp">首页</span>
     </div>
-    <div class="foot-model" @click="toPage('2')">
+    <div class="foot-model" :class="path=='/novel'? 'active' : ''" @click="toPage('2')">
       <span class="foot-model-sp">小说</span>
     </div>
-    <div class="foot-model" @click="toPage('3')">
+    <div class="foot-model" :class="path=='/poetry'? 'active' : ''" @click="toPage('3')">
       <span class="foot-model-sp">诗词</span>
     </div>
-    <div class="foot-model" @click="toPage('4')">
+    <div class="foot-model" :class="path=='/song'? 'active' : ''" @click="toPage('4')">
       <span class="foot-model-sp">歌曲</span>
     </div>
-    <div class="foot-model" @click="toPage('5')">
+    <div class="foot-model" :class="path=='/user'? 'active' : ''" @click="toPage('5')">
       <span class="foot-model-sp">我的</span>
     </div>
   </div>
@@ -24,7 +24,12 @@
     },
     data () {
       return {
+        path:"/index"
       }
+    },
+    mounted() {
+      this.path=this.$route.path;
+      console.log(this.path);
     },
     computed:{
     },

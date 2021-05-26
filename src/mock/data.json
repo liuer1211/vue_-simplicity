@@ -4,29 +4,22 @@
       "id" : "13",
       "img": "https://cn.bing.com/th?id=OHR.PolarExpress_ZH-CN9522496479_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
       "tit": "游戏",
-      "cen": "极简风格",
+      "cen": "智力问答",
       "score": 4.1
     },
     {
-      "id" : "2",
+      "id" : "14",
       "img": "https://cn.bing.com/th?id=OHR.TreCime_ZH-CN7609469681_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
-      "tit": "九宫格",
-      "cen": "极简风格",
+      "tit": "探秘未知",
+      "cen": "解锁小说",
       "score": 4
     },
     {
       "id" : "12",
       "img": "https://cn.bing.com/th?id=OHR.WildReindeer_ZH-CN8301029606_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
       "tit": "音乐",
-      "cen": "极简风格",
+      "cen": "专属音乐",
       "score": 4.1
-    },
-    {
-      "id" : "4",
-      "img": "https://cn.bing.com/th?id=OHR.TreCime_ZH-CN7609469681_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
-      "tit": "无限滚动",
-      "cen": "极简风格",
-      "score": 2.5
     }
   ],
   "swiperList": [
@@ -190,7 +183,7 @@
       "name": "血雨江湖",
       "date": "2018-06-14",
       "introduce": "侠之大者，为国为民",
-      "img": "http://static.zongheng.com/upload/cover/84/fa/84fa89d8865057186201f2cf445c002a.jpeg",
+      "img": "https://liuer1211.github.io/vue_-simplicity/static/img/noval/n1.png",
       "hot": "最新",
       "hrefUrl": "http://book.zongheng.com/book/752647.html"
     },
@@ -198,7 +191,7 @@
       "name": "夜灵犀传奇",
       "date": "2020-12-25",
       "introduce": "武林风雨几时休，一入江湖难再出。",
-      "img": "http://static.zongheng.com/upload/cover/80/04/8004b26bd369e2312ee26a797af4a1fe.jpeg",
+      "img": "https://liuer1211.github.io/vue_-simplicity/static/img/noval/n2.png",
       "hot": "最新",
       "hrefUrl": "https://m.zongheng.com/h5/book?bookid=1075297"
     }

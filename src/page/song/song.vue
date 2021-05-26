@@ -20,14 +20,19 @@
         </div>
       </a>
     </div>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
   import { mapState, mapActions } from 'vuex'
+  import Footer from '../../components/footer/footer'
   export default {
     data () {
       return {}
+    },
+    components:{
+      Footer
     },
     computed:{
       ...mapState(['songList']),

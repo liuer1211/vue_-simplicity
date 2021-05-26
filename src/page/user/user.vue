@@ -304,7 +304,7 @@
       },
       // 左侧菜单栏
       toPage() {
-        this.$router.push({path:"/achievement"});
+        this.$router.push({path:"/dropDown"});
       }
     },
     mounted(){
