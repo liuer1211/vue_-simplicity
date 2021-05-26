@@ -64,6 +64,8 @@
         .novel-model-left{
           width: 30%;
           height: 5rem;
+          background: #343d1e;
+          border-radius: .2rem;
           img{
             display: block;
             width: 100%;

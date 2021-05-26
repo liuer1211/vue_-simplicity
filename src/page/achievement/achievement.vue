@@ -71,7 +71,7 @@
 				background-image: linear-gradient(to bottom, #a55fff, #4b58ed);
 				border-radius: 0.2rem;
 				-webkit-box-shadow: -3px 2px 4px 6px #431d9c;
-				box-shadow: 1px 1px 2px 0px #8969d5;
+				box-shadow: 3px 3px 4px 0px #8969d5;
 				position: relative;
 				.book-name-img {
 					position: absolute;
