@@ -3,8 +3,10 @@
     <!-- 介绍 -->
     <div class="user-main-up">
       <div class="user-up-f1">
+        <div class="user-up-l"></div>
         <img class="user-up-img" src="https://cn.bing.com/th?id=OHR.NarniaForest_ZH-CN8466850438_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4"/>
         <div @click="getLeftMenu()" class="user-up-li"></div>
+        <div class="user-grade">V<span>121</span></div>
       </div>
       <div class="user-up-f2">早上好！Jack</div>
       <div class="user-up-f3">
@@ -330,11 +332,17 @@
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
+        position: relative;
+        .user-up-l {
+          height: 2.5rem;
+        }
         .user-up-img{
-          width: 2rem;
-          height: 2rem;
+          position: absolute;
+          width: 2.5rem;
+          height: 2.5rem;
           object-fit: cover;
           border-radius: 50%;
+          z-index: 99;
         }
         .user-up-li{
           width: 1.2rem;
@@ -345,10 +353,25 @@
           height: 0.15rem;
           padding: 0.3rem 0 0.3rem 0.3rem;
         }
+        .user-grade {
+          position: absolute;
+          background: #ed8d48;
+          padding: .1rem .5rem .1rem 1.3rem;
+          font-size: .7rem;
+          bottom: 0;
+          left: 1.3rem;
+          border-top-left-radius: 0.2rem;
+          border-top-right-radius: 0.6rem;
+          border-bottom-right-radius: 0.6rem;
+          border-bottom-left-radius: 0.2rem;
+          span {
+            font-size: .6rem;
+          }
+        }
       }
       .user-up-f2{
         font-size: 1rem;
-        margin: 0.5rem 0 0.5rem;
+        margin: 1.5rem 0 0.8rem;
       }
       .user-up-f3{
         margin: 0 0 0.2rem;
@@ -360,13 +383,13 @@
     }
     .user-manu {
         padding: .8rem;
-        color: #ff863f;
+        color: #ed8d48;
         .van-grid {
           border-radius: .2rem;
           overflow: hidden;
           cursor: pointer;
           /deep/ .van-grid-item__text {
-            color: #ff9133;
+            color: #ed8d48;
           }
         }
     }
