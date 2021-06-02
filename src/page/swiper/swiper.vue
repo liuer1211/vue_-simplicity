@@ -1,6 +1,6 @@
 <template>
   <div class="swiper-main">
-    <div class="swiper-main-tit">九宫格</div>
+    <div class="swiper-main-tit">挑战</div>
     <div class="swiper-main-cen">
       <div class="swiper-container" v-if="swiperList.length">
         <div class="swiper-wrapper">
@@ -11,7 +11,8 @@
                   <div class="swiper-model-bg">
                     <!--<i class="sw-icon" >图</i>-->
                     <!--:class="item.icon"-->
-                    <van-icon :name="item.icon" />
+                    <!-- <van-icon :name="item.icon" /> -->
+                    <i :class="item.icon" class="icon-style"></i>
                   </div>
                 </div>
                 <div class="swiper-model-bot">{{item.name}}</div>
@@ -164,6 +165,10 @@
               display: flex;
               align-items: center;
               justify-content: center;
+              .icon-style {
+                color: #ccd720;
+                font-size: 1.2rem;
+              }
               .sw-icon{
                 font-style: initial;
                 color: #ccd720;

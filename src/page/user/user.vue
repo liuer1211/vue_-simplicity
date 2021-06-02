@@ -103,7 +103,8 @@
           {
             year: '2021-01-03',
             infoList: [
-              {title:'约会',cen:'火锅，teamLab无界美术馆，看星星',date:'11:30'}
+              {title:'约会',cen:'火锅，teamLab无界美术馆，看星星',date:'11:30'},
+              {title:'冥想',cen:'真正的大师永远怀揣着一颗学徒的心',date:'06:30'},
             ]
           }
         ]
