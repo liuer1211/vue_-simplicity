@@ -540,5 +540,11 @@
       color: #fff;
       background-color: #378aff;
     }
+    /deep/ .van-grid {
+      border: .01rem solid #eee;
+    }
+    /deep/ .van-grid-item__content{
+      background-color: #100f0f;
+    }
   }
 </style>

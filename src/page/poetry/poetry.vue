@@ -1,5 +1,6 @@
 <template>
   <div class="novel-main">
+    <HeaderTop tit="诗词"></HeaderTop>
     <!--主体-->
     <div class="novel-body-main">
       <a class="novel-a" :href="item.hrefUrl" v-for="(item, index) in poetryList" :key="index">
@@ -27,12 +28,14 @@
 <script>
   import { mapState, mapActions } from 'vuex'
   import Footer from '../../components/footer/footer'
+  import HeaderTop from '../../components/header/headerTop'
   export default {
     data () {
       return {}
     },
     components:{
-      Footer
+      Footer,
+      HeaderTop
     },
     computed:{
       ...mapState(['poetryList']),
@@ -52,13 +55,17 @@
 <style scoped lang="scss">
   .novel-main{
     .novel-body-main{
+      margin-top: 2.6rem;
       .novel-a{
         display: inline-block;
         color: #fff;
         width: 100%;
       }
+      .novel-a:first-child {
+        padding-top: .6rem;
+      }
       .novel-model{
-        padding: 0.6rem;
+        padding: 0 0.6rem 0.6rem 0.6rem; 
         box-sizing: border-box;
         display: flex;
         .novel-model-left{

@@ -1,20 +1,10 @@
 <template>
   <div class="foot-main">
-    <div class="foot-model" :class="path=='/index'? 'active' : ''" @click="toPage('1')">
-      <span class="foot-model-sp">首页</span>
-    </div>
-    <div class="foot-model" :class="path=='/novel'? 'active' : ''" @click="toPage('2')">
-      <span class="foot-model-sp">小说</span>
-    </div>
-    <div class="foot-model" :class="path=='/poetry'? 'active' : ''" @click="toPage('3')">
-      <span class="foot-model-sp">诗词</span>
-    </div>
-    <div class="foot-model" :class="path=='/song'? 'active' : ''" @click="toPage('4')">
-      <span class="foot-model-sp">歌曲</span>
-    </div>
-    <div class="foot-model" :class="path=='/user'? 'active' : ''" @click="toPage('5')">
-      <span class="foot-model-sp">我的</span>
-    </div>
+    <div class="foot-model one" :class="path === '/index' ? 'active' : ''" @click="toPage('1')"></div>
+    <div class="foot-model two" :class="path === '/novel' ? 'active' : ''" @click="toPage('2')"></div>
+    <div class="foot-model three" :class="path === '/poetry' ? 'active' : ''" @click="toPage('3')"></div>
+    <div class="foot-model four" :class="path === '/song' ? 'active' : ''" @click="toPage('4')"></div>
+    <div class="foot-model five" :class="path === '/user' ? 'active' : ''" @click="toPage('5')"></div>
   </div>
 </template>
 
@@ -82,30 +72,87 @@
     position: fixed;
     bottom: 0;
     width: 100%;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: 0.6rem 0.8rem;
+    padding: 0.6rem;
     background: #000;
-    >div{
-      padding: 0.3rem;
-    }
+    border-top: .005rem solid #eee;
     .foot-model{
-      background: #cccccc;
-      border-radius: 50%;
-      color: #000;
-      width: 1.2rem;
-      height: 1.2rem;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
-      &.active{
-        background: #e0931f;
-        font-weight: 600;
-        color: #fff;
+      width: 1.5rem;
+      height: 1.5rem;
+      &.one {
+        background: url('../../assets/img/index/h11.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        &.active {
+          background: url('../../assets/img/index/h1.png');
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      }
+      &.two {
+        background: url('../../assets/img/index/h22.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        &.active {
+          background: url('../../assets/img/index/h2.png');
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      }
+      &.three {
+        background: url('../../assets/img/index/h33.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        &.active {
+          background: url('../../assets/img/index/h3.png');
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      }
+      &.four {
+        background: url('../../assets/img/index/h44.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        &.active {
+          background: url('../../assets/img/index/h4.png');
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      }
+      &.five {
+        background: url('../../assets/img/index/h55.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        &.active {
+          background: url('../../assets/img/index/h5.png');
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
       }
       .foot-model-sp{
         font-size: 0.6rem;
+      }
+      img {
+        width: 2rem;
+        height: 2rem;
+        object-fit: cover;
+        display: block;
       }
     }
   }
