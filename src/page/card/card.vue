@@ -46,13 +46,13 @@
         toCard(item) {
             switch (item.id) {
                 case '1':
-                    this.$router.push({name:'login'})
+                    this.$router.push({name:'yeCard'})
                     return
                 case '2':
-                    this.$router.push({name:'swiper'})
+                    this.$router.push({name:'yeCard'})
                     return
                 case '3':
-                    this.$router.push({name:'top1'})
+                    this.$router.push({name:'yeCard'})
                     return
                 default:
                     this.getTip()
