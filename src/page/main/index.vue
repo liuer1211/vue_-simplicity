@@ -102,6 +102,9 @@
           case '14':
             this.$router.push({name:'achievement'})
             return
+          case '15':
+            this.$router.push({name:'card'})
+            return
           default:
             this.getTip()
             return;

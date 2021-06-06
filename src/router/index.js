@@ -20,6 +20,7 @@ import Game from '@/page/game/game' // 游戏
 import Achievement from '@/page/achievement/achievement' // 成就
 import NovalYe from '@/page/achievement/yelingxi/novalYe' // 小说-夜灵犀传奇
 import NovalYeMain from '@/page/achievement/yelingxi/model/novalYeMain' // 小说-夜灵犀传奇
+import Card from '@/page/card/card' // 成就卡片
 
 Vue.use(Router)
 // 避免到当前位置的冗余导航。 简单来说就是重复触发了同一个路由。
@@ -129,6 +130,11 @@ export default new Router({
       path: '/novalYeMain',
       name: 'novalYeMain',
       component: NovalYeMain,
+    },
+    {
+      path: '/card',
+      name: 'card',
+      component: Card,
     }
   ]
 })
