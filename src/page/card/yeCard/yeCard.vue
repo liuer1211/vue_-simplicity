@@ -1,14 +1,60 @@
 <template>
   <div class="card-main">
-    <div class="card-model">
-        <div v-for="(item,index) in list" :key="index" @click="toCard(item)">
-            <img :src="item.imgs" alt="">
-            <div class="model-bot">
-                <span>{{item.tit}}</span>
-                <span>{{item.num}}张</span>
-            </div>
-        </div>
-    </div>
+    <div class="card-glory">荣耀墙</div>
+    <!-- 荣耀列表 -->
+    <van-grid :border="false" :column-num="3">
+        <van-grid-item>
+            <van-image src="https://img01.yzcdn.cn/vant/apple-1.jpg" />
+            <span>炉火纯青</span>
+        </van-grid-item>
+        <van-grid-item>
+            <van-image src="https://img01.yzcdn.cn/vant/apple-2.jpg" />
+            <span>炉火纯青</span>
+        </van-grid-item>
+        <van-grid-item>
+            <van-image src="https://img01.yzcdn.cn/vant/apple-3.jpg" />
+            <span>炉火纯青</span>
+        </van-grid-item>
+        <van-grid-item>
+            <van-image src="https://img01.yzcdn.cn/vant/apple-1.jpg" />
+            <span>炉火纯青</span>
+        </van-grid-item>
+        <van-grid-item>
+            <van-image src="https://img01.yzcdn.cn/vant/apple-2.jpg" />
+            <span>炉火纯青</span>
+        </van-grid-item>
+        <van-grid-item>
+            <van-image src="https://img01.yzcdn.cn/vant/apple-3.jpg" />
+            <span>炉火纯青</span>
+        </van-grid-item>
+    </van-grid>
+    <!-- 荣耀列表 -->
+    <van-grid :border="false" :column-num="3">
+        <van-grid-item>
+            <van-image src="https://img01.yzcdn.cn/vant/apple-1.jpg" />
+            <span>炉火纯青</span>
+        </van-grid-item>
+        <van-grid-item>
+            <van-image src="https://img01.yzcdn.cn/vant/apple-2.jpg" />
+            <span>炉火纯青</span>
+        </van-grid-item>
+        <van-grid-item>
+            <van-image src="https://img01.yzcdn.cn/vant/apple-3.jpg" />
+            <span>炉火纯青</span>
+        </van-grid-item>
+        <van-grid-item>
+            <van-image src="https://img01.yzcdn.cn/vant/apple-1.jpg" />
+            <span>炉火纯青</span>
+        </van-grid-item>
+        <van-grid-item>
+            <van-image src="https://img01.yzcdn.cn/vant/apple-2.jpg" />
+            <span>炉火纯青</span>
+        </van-grid-item>
+        <van-grid-item>
+            <van-image src="https://img01.yzcdn.cn/vant/apple-3.jpg" />
+            <span>炉火纯青</span>
+        </van-grid-item>
+    </van-grid>
   </div>
 </template>
 
@@ -17,58 +63,11 @@
   export default {
     data() {
       return {
-        list: [
-            {
-                id: "1",
-                imgs: "https://cn.bing.com/th?id=OHR.TreCime_ZH-CN7609469681_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
-                tit: "夜灵犀传奇系列",
-                num: "15"
-            },
-            {
-                id: "2",
-                imgs: "https://cn.bing.com/th?id=OHR.TreCime_ZH-CN7609469681_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
-                tit: "血雨江湖系列",
-                num: "18"
-            },
-            {
-                id: "3",
-                imgs: "https://cn.bing.com/th?id=OHR.TreCime_ZH-CN7609469681_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
-                tit: "聊斋系列",
-                num: "12"
-            }
-        ]
       }
     },
     mounted() {
     },
     methods:{
-        // 卡片列表
-        toCard(item) {
-            switch (item.id) {
-                case '1':
-                    this.$router.push({name:'yeCard'})
-                    return
-                case '2':
-                    this.$router.push({name:'yeCard'})
-                    return
-                case '3':
-                    this.$router.push({name:'yeCard'})
-                    return
-                default:
-                    this.getTip()
-                    return;
-            }
-        },
-        // 通知
-        getTip(){
-            this.$message({
-            message: '暂未开通！',
-            type: 'warning',
-            duration: '2000',
-            center: true,
-            offset: 30,
-            });
-        }
     }
   }
 </script>
@@ -77,45 +76,25 @@
   .card-main {
     padding: .8rem;
     color: #fff;
-    .card-model {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-        flex-wrap: wrap;
-        >div {
-            background: #aa00f0;
-            width: 48%;
-            border-radius: .2rem;
-            position: relative;
-            overflow: hidden;
-            margin-bottom: .8rem;
-            img {
-                width: 100%;
-                height: 10rem;
-                object-fit: cover;
-                display: block;
-            }
-            .model-bot{
-                position: absolute;
-                bottom: 0;
-                background: #0303034d;
-                width: 100%;
-                padding: .8rem .4rem;
-                -webkit-box-sizing: border-box;
-                box-sizing: border-box;
-                font-size: .6rem;
-                color: #fff;
-                box-sizing: border-box;
-                display: flex;
-                justify-content: space-between;
-                >span:last-child{
-                    color: #f0bc00;
-                    font-weight: 600;
-                }
-            }
-        }
+    .card-glory {
+        padding: 0 0 .8rem;
+        text-align: center;
+        font-size: .8rem;
+    }
+    span {
+        padding: 0.5rem 0 0;
+        font-size: .65rem;
+        color: #fff;
+    }
+    /deep/ .van-grid {
+        border-radius: .2rem;
+        overflow: hidden;
+        box-shadow: 0px 1px 1px 2px #464646;
+        margin-bottom: .8rem;
+    }
+    /deep/ .van-grid-item__content {
+        background-color: #353030;
+        padding: .5rem;
     }
   }
 </style>
