@@ -22,7 +22,7 @@
         <van-button type="primary" class="next" @click="toNext()">下一关</van-button>
     </div>
     <!-- 战绩 -->
-    <van-popup v-model="isModel" round :close-on-click-overlay="false" :duration="0.5" :style="{ height: '60%',width: '80%' }">
+    <van-popup v-model="isModel" round :close-on-click-overlay="false" :duration="0.5" :style="{ height: '57%',width: '80%' }">
         <div class="model-main">
             当前关卡：{{datas.level}}<br/>
             当前能量：{{energy}}<br/>
