@@ -1,54 +1,35 @@
 <template>
   <div class="card-main">
     <div class="card-glory">荣耀墙</div>
+
     <!-- 荣耀列表 -->
     <van-grid :border="false" :column-num="3">
-        <van-grid-item>
-            <img src="https://img01.yzcdn.cn/vant/apple-1.jpg" />
-            <span class="card-sp">炉火纯青</span>
-        </van-grid-item>
-        <van-grid-item>
-            <img src="https://img01.yzcdn.cn/vant/apple-2.jpg" />
-            <span class="card-sp">炉火纯青</span>
-        </van-grid-item>
-        <van-grid-item>
-            <img src="https://img01.yzcdn.cn/vant/apple-3.jpg" />
-            <span class="card-sp">炉火纯青</span>
-        </van-grid-item>
-        <van-grid-item>
-            <img src="https://img01.yzcdn.cn/vant/apple-1.jpg" />
-            <span class="card-sp">炉火纯青</span>
-        </van-grid-item>
-        <van-grid-item>
-            <img src="https://img01.yzcdn.cn/vant/apple-2.jpg" />
-            <span class="card-sp">炉火纯青</span>
-        </van-grid-item>
-        <van-grid-item>
-            <img src="https://img01.yzcdn.cn/vant/apple-3.jpg" />
-            <span class="card-sp">炉火纯青</span>
+        <van-grid-item v-for="(item,index) in list" :key="index" @click="getCard(item)">
+            <img :src="item.img" />
+            <span class="card-sp">{{item.tit}}</span>
         </van-grid-item>
     </van-grid>
 
-    <!-- 刮刮乐 -->
-    
+    <!-- 卡片 -->
+    <van-popup v-model="isCardModel" round :duration="0.5" :style="{ height: '60%',width: '80%' }">
+        <img class="card-img" src="https://liuer1211.github.io/vue_-simplicity/static/img/game/card/s1.jpg"/>
+    </van-popup>
 
-    <!-- 战绩 -->
+    <!-- 刮刮乐-->
     <van-popup v-model="isModel" round :close-on-click-overlay="false" :duration="0.5" :style="{ height: '60%',width: '80%' }">
         <div class="model-main">
             <div class="model-img">
-                <!-- <img src="https://liuer1211.github.io/vue_-simplicity/static/img/game/card/s1.jpg"/> -->
-                <div>
-        <scratch-card 
-            elementId="scratch" 
-            width="100%" 
-            height="100%" 
-            :moveRadius="15" 
-            :ratio="0.8"
-            :startCallback="startCallback" 
-            :clearCallback="clearCallbackUp"
-            :result="result">
-        </scratch-card>
-    </div>
+                <scratch-card 
+                    elementId="scratch" 
+                    width="100%"
+                    height="15rem" 
+                    :moveRadius="15" 
+                    :ratio="0.8"
+                    :startCallback="startCallback" 
+                    :clearCallback="clearCallbackUp"
+                    coverImg="https://liuer1211.github.io/vue_-simplicity/static/img/card/c1.jpg"
+                    :result="result">
+                </scratch-card>
             </div>
             <van-button plain type="info" @click="isModel=false">开心收下</van-button>
         </div>
@@ -62,7 +43,14 @@
   export default {
     data() {
       return {
+        list: [
+            {img:"https://img01.yzcdn.cn/vant/apple-2.jpg",tit:"炉火纯青"},
+            {img:"https://img01.yzcdn.cn/vant/apple-2.jpg",tit:"炉火纯青"},
+            {img:"https://img01.yzcdn.cn/vant/apple-2.jpg",tit:"炉火纯青"},
+            {img:"https://img01.yzcdn.cn/vant/apple-2.jpg",tit:"炉火纯青"},
+        ],
         isModel: true,
+        isCardModel: false,
         result: `<img src="https://liuer1211.github.io/vue_-simplicity/static/img/game/card/s1.jpg"/>`,//遮罩层下面的页面（html）注：以html标签字符串的样式写
       }
     },
@@ -78,6 +66,10 @@
         //刮刮乐刮层全部清除后的回调函数
         clearCallbackUp(){
         },
+        // 显示大图
+        getCard(item) {
+            this.isCardModel=true;
+        }
     }
   }
 </script>
@@ -86,6 +78,24 @@
     .card-main {
         padding: .8rem;
         color: #fff;
+        /deep/ .van-grid {
+            border-radius: .2rem;
+            overflow: hidden;
+            box-shadow: 0px 1px 1px 2px #464646;
+            margin-bottom: .8rem;
+            cursor: pointer;
+            background-color: #353030;
+            img {
+                width: 100%;
+                height: 100%;
+                display: block;
+                object-fit: cover;
+            }
+        }
+        /deep/ .van-grid-item__content {
+            background-color: #353030;
+            padding: .5rem;
+        }
         .card-glory {
             padding: 0 0 .8rem;
             text-align: center;
@@ -95,6 +105,15 @@
             padding: 0.5rem 0 0;
             font-size: .65rem;
             color: #fff;
+        }
+        .card-img{
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+        /deep/ .van-popup {
+            background-color: #fff0;
         }
         .model-main {
             position: relative;
@@ -125,31 +144,13 @@
                 color: #fff !important;
                 background-color: #fff0;
                 border: .05rem solid #fff;
-                width: 100%;
+                width: 99%;
             }
-        }
-        /deep/ .van-popup {
-            background-color: #fff0;
-        }
-
-        /deep/ .van-grid {
-            border-radius: .2rem;
-            overflow: hidden;
-            box-shadow: 0px 1px 1px 2px #464646;
-            margin-bottom: .8rem;
-            img {
-                width: 100%;
-                height: 100%;
-                display: block;
-            }
-        }
-        /deep/ .van-grid-item__content {
-            background-color: #353030;
-            padding: .5rem;
         }
     }
     .scratchCard {
         overflow: hidden;
+        border-radius: .8rem;
     }
     /deep/ .scratchCard .result {
         position: absolute;

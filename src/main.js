@@ -32,6 +32,8 @@ import '@/directive/index'
 
 import '@/permission' // 全局路由配置
 
+import * as filters from './plugin/filters.js'
+
 
 // Vue.use(animated)
 Vue.use(ElementUI)
@@ -45,6 +47,10 @@ Vue.use(vant)
 Vue.use(Toast);
 
 Vue.config.productionTip = false
+
+Object.keys(filters).forEach(key=>{
+  Vue.filter(key,filters[key])//插入过滤器名和对应方法
+})
 
 new Vue({
   el: '#app',
