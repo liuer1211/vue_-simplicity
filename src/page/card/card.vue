@@ -21,20 +21,14 @@
             {
                 id: "1",
                 imgs: "https://cn.bing.com/th?id=OHR.TreCime_ZH-CN7609469681_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
-                tit: "夜灵犀传奇系列",
+                tit: "故事卡片",
                 num: "15"
             },
             {
                 id: "2",
                 imgs: "https://cn.bing.com/th?id=OHR.TreCime_ZH-CN7609469681_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
-                tit: "血雨江湖系列",
+                tit: "荣耀墙",
                 num: "18"
-            },
-            {
-                id: "3",
-                imgs: "https://cn.bing.com/th?id=OHR.TreCime_ZH-CN7609469681_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
-                tit: "聊斋系列",
-                num: "12"
             }
           ]
       }
@@ -49,10 +43,7 @@
                     this.$router.push({name:'yeCard'})
                     return
                 case '2':
-                    this.$router.push({name:'yeCard'})
-                    return
-                case '3':
-                    this.$router.push({name:'yeCard'})
+                    this.$router.push({name:'rongCard'})
                     return
                 default:
                     this.getTip()
