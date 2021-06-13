@@ -21,7 +21,7 @@
             {
                 id: "1",
                 imgs: "https://cn.bing.com/th?id=OHR.TreCime_ZH-CN7609469681_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
-                tit: "故事卡片",
+                tit: "人物卡片",
                 num: "15"
             },
             {

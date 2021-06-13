@@ -17,14 +17,14 @@
       </div>
     </div>
     <!-- 菜单 -->
-    <div class="user-manu">
+    <!-- <div class="user-manu">
       <van-grid>
         <van-grid-item icon="like-o" text="关注" @click="toPage"/>
         <van-grid-item icon="fire-o" text="最热" @click="toPage"/>
         <van-grid-item icon="gift-o" text="礼品" @click="toPage"/>
         <van-grid-item icon="service-o" text="听书" @click="toPage"/>
       </van-grid>
-    </div>
+    </div> -->
     <!-- 计划 -->
     <div class="user-main-bot">
       <div class="user-plan-tit">今日计划</div>

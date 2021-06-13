@@ -1,6 +1,6 @@
 <template>
   <div class="card-main">
-    <div class="card-glory">故事卡片</div>
+    <div class="card-glory">人物卡片</div>
 
     <!-- 荣耀列表 -->
     <van-grid :border="false" :column-num="3">
