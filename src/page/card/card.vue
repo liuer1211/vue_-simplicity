@@ -20,13 +20,13 @@
           list: [
             {
                 id: "1",
-                imgs: "https://cn.bing.com/th?id=OHR.TreCime_ZH-CN7609469681_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+                imgs: "https://liuer1211.github.io/vue_-simplicity/static/img/card/p1.jpg",
                 tit: "人物卡片",
                 num: "15"
             },
             {
                 id: "2",
-                imgs: "https://cn.bing.com/th?id=OHR.TreCime_ZH-CN7609469681_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4",
+                imgs: "https://liuer1211.github.io/vue_-simplicity/static/img/card/p2.jpg",
                 tit: "荣耀墙",
                 num: "18"
             }
