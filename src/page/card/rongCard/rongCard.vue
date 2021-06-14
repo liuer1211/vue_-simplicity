@@ -1,6 +1,6 @@
 <template>
   <div class="card-main">
-    <div class="card-glory">故事卡片</div>
+    <div class="card-glory">人物卡片</div>
 
     <!-- 荣耀列表 -->
     <van-grid :border="false" :column-num="3">
@@ -12,7 +12,7 @@
 
     <!-- 卡片 -->
     <van-popup v-model="isCardModel" round :duration="0.5" :style="{ height: '60%',width: '80%' }">
-        <img class="card-img" src="https://liuer1211.github.io/vue_-simplicity/static/img/game/card/s1.jpg"/>
+        <img class="card-img" src="https://liuer1211.github.io/vue_-simplicity/static/img/card/yeCard/mo/suwan1.jpg"/>
     </van-popup>
 
     <!-- 刮刮乐-->
@@ -44,14 +44,14 @@
     data() {
       return {
         list: [
-            {img:"https://img01.yzcdn.cn/vant/apple-2.jpg",tit:"炉火纯青"},
-            {img:"https://img01.yzcdn.cn/vant/apple-2.jpg",tit:"炉火纯青"},
-            {img:"https://img01.yzcdn.cn/vant/apple-2.jpg",tit:"炉火纯青"},
-            {img:"https://img01.yzcdn.cn/vant/apple-2.jpg",tit:"炉火纯青"},
+            {img:"https://liuer1211.github.io/vue_-simplicity/static/img/card/yeCard/scratch/suw1.jpg",tit:"炉火纯青"},
+            {img:"https://liuer1211.github.io/vue_-simplicity/static/img/card/yeCard/scratch/suw1.jpg",tit:"炉火纯青"},
+            {img:"https://liuer1211.github.io/vue_-simplicity/static/img/card/yeCard/scratch/suw1.jpg",tit:"炉火纯青"},
+            {img:"https://liuer1211.github.io/vue_-simplicity/static/img/card/yeCard/scratch/suw1.jpg",tit:"炉火纯青"},
         ],
         isModel: true,
         isCardModel: false,
-        result: `<img src="https://liuer1211.github.io/vue_-simplicity/static/img/game/card/s1.jpg"/>`,//遮罩层下面的页面（html）注：以html标签字符串的样式写
+        result: `<img src="https://liuer1211.github.io/vue_-simplicity/static/img/card/yeCard/scratch/suw1.jpg"/>`,//遮罩层下面的页面（html）注：以html标签字符串的样式写
       }
     },
     components: {
@@ -90,12 +90,14 @@
                 height: 100%;
                 display: block;
                 object-fit: cover;
+                border-radius: .2rem;
             }
         }
         /deep/ .van-grid-item__content {
             background-color: #353030;
             padding: .5rem;
         }
+        // 卡片
         .card-glory {
             padding: 0 0 .8rem;
             text-align: center;
@@ -115,6 +117,7 @@
         /deep/ .van-popup {
             background-color: #fff0;
         }
+        // 刮刮乐-弹出层
         .model-main {
             position: relative;
             height: 80%;
@@ -148,6 +151,7 @@
             }
         }
     }
+    // 刮刮乐
     .scratchCard {
         overflow: hidden;
         border-radius: .8rem;
