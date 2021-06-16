@@ -8,5 +8,6 @@ export default {
   newsList: [], // 新闻数据
   novelList: [], // 小说数据
   songList: [], // 歌曲数据
-  poetryList: [] // 诗词数据
+  poetryList: [], // 诗词数据
+  address: {} // 地理位置
 }

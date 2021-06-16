@@ -1,5 +1,6 @@
 /*直接更新state的多个方法对象*/
-import { RECEIVE_MAINLIST, RECEIVE_SWIPERLIST, RECEIVE_NEWSLIST, RECEIVE_NOVELLIST, RECEIVE_SONGLIST, RECEIVE_POETRYLIST } from "./mutation-types";
+import { RECEIVE_MAINLIST, RECEIVE_SWIPERLIST, RECEIVE_NEWSLIST, RECEIVE_NOVELLIST, RECEIVE_SONGLIST, RECEIVE_POETRYLIST,
+  QUERY_ADDRESS } from "./mutation-types";
 
 export default {
   // 获取首页列表,然后更改数据
@@ -25,5 +26,9 @@ export default {
   // 获取诗词列表,然后更改数据
   [RECEIVE_POETRYLIST](state,{list}){
     state.poetryList=list
+  },
+  // 获取地理位置
+  [QUERY_ADDRESS](state,{datas}){
+    state.address=datas
   }
 }

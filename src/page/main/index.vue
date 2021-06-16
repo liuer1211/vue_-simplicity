@@ -35,13 +35,20 @@
 </template>
 
 <script>
-  import {reqMainList} from '../../api/index'
+  import {reqMainList, reqAddress} from '../../api/index'
   import Search from '../../components/search/search'
   import Footer from '../../components/footer/footer'
   import Start from '../../components/start/start'
+  // import {mapState} from 'vuex'
   export default {
     components:{
       Search, Start, Footer
+    },
+    computed: {
+      // ...mapState(['address']),
+      address () {
+        return this.$store.state.address
+      },
     },
     data () {
       return {
@@ -52,8 +59,49 @@
     created() {
       // 初始列表
       this.getInit()
+      // 获得地理位置
+      this.getAddress()
     },
     methods:{
+      // 获得地理位置
+      // async getAddress(){
+      //   let data = await reqAddress("40.10038,116.36867");
+      //   console.log("address=", data);
+      // },
+      // 获得地理位置
+      getAddress(){
+        // this.getPosition().then(res=>{
+        //   console.log("res",res);
+        // });
+        
+        // this.$store.dispatch('getAddress',"40.10038,116.36867")
+        console.log("=========");
+        window.navigator.geolocation.getCurrentPosition(function (position) {
+          console.log(position.coords.latitude)
+          console.log(position.coords.longitude)
+        })
+
+      },
+      // 获得经纬度
+      getPosition () {
+        return new Promise((resolve, reject) => {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+              let latitude = position.coords.latitude
+              let longitude = position.coords.longitude
+              let data = {
+                latitude: latitude,
+                longitude: longitude
+              }
+              resolve(data)
+            }, function () {
+              reject(arguments)
+            })
+          } else {
+            reject('你的浏览器不支持当前地理位置信息获取')
+          }
+        })
+      },
       // 获得列表，这里先不用vuex管理
       async getInit(){
         let data = await reqMainList()
@@ -126,6 +174,8 @@
       }
     },
     mounted(){
+      // console.log("address=",this.$store.state.address);
+      console.log("address=",this.address);
     },
     beforeDestroy(){
     }
