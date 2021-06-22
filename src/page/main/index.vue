@@ -59,49 +59,37 @@
     created() {
       // 初始列表
       this.getInit()
-      // 获得地理位置
-      this.getAddress()
+      // 经纬度 - 地理位置
+      this.getAddr()
     },
     methods:{
       // 获得地理位置
-      // async getAddress(){
-      //   let data = await reqAddress("40.10038,116.36867");
-      //   console.log("address=", data);
-      // },
-      // 获得地理位置
-      getAddress(){
-        // this.getPosition().then(res=>{
-        //   console.log("res",res);
-        // });
-        
+      async getAddress(code){
+        try {
+          let data = await reqAddress(code);
+          console.log("address=", data);
+        } catch(e) {
+          console.log("地理位置-接口异常");
+        }
+      },
+
+      // 获得经纬度
+      getAddr(){
         // this.$store.dispatch('getAddress',"40.10038,116.36867")
         console.log("=========");
+        let _this = this;
         window.navigator.geolocation.getCurrentPosition(function (position) {
+          console.log("=====经纬度====");
+          // 31.241738724884776
+          // 121.68368037977544
           console.log(position.coords.latitude)
           console.log(position.coords.longitude)
+          let code = position.coords.latitude+","+position.coords.longitude
+          console.log("code=",code)
+          _this.getAddress(code);
         })
+      },
 
-      },
-      // 获得经纬度
-      getPosition () {
-        return new Promise((resolve, reject) => {
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-              let latitude = position.coords.latitude
-              let longitude = position.coords.longitude
-              let data = {
-                latitude: latitude,
-                longitude: longitude
-              }
-              resolve(data)
-            }, function () {
-              reject(arguments)
-            })
-          } else {
-            reject('你的浏览器不支持当前地理位置信息获取')
-          }
-        })
-      },
       // 获得列表，这里先不用vuex管理
       async getInit(){
         let data = await reqMainList()
