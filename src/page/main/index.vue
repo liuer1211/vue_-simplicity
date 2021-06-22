@@ -66,8 +66,9 @@
       // 获得地理位置
       async getAddress(code){
         try {
-          let data = await reqAddress(code);
-          console.log("address=", data);
+          // let data = await reqAddress(code); // 直接调
+          // console.log("address=", data);
+          this.$store.dispatch('getAddress',code); // 走vuex
         } catch(e) {
           console.log("地理位置-接口异常");
         }

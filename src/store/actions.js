@@ -64,11 +64,16 @@ export default {
   },
   // 获得地理位置
   async getAddress({commit},code) {
-    const res = await reqAddress(code)
-    const result=res.data
-    if(result.code===0){
-      const datas=result.data
-      commit(QUERY_ADDRESS,{datas})
+    try {
+      const res = await reqAddress(code)
+      const result=res.data
+      console.log("r-----",result.data);
+      if(result.code===0){
+        const datas=result.data
+        commit(QUERY_ADDRESS,{datas})
+      }
+    } catch(e) {
+      console.log("地理位置--接口异常");
     }
   },
 }

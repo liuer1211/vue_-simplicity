@@ -10,8 +10,8 @@
       </div>
       <div class="user-up-f2">早上好！Jack</div>
       <div class="user-up-f3">
-        <span>上海 浦东</span>/
-        <span>晴</span>/
+        <span>{{address.city}} {{address.address}}</span>/
+        <span>晴</span> <br/>
         <span>{{week}}</span>/
         <span>{{year}}</span>
       </div>
@@ -81,6 +81,11 @@
   import {dateUtil} from '@/assets/js/util'
   import { Toast } from 'vant';
   export default {
+    computed: {
+      address () {
+        return this.$store.state.address
+      },
+    },
     data () {
       return {
         show: false,
