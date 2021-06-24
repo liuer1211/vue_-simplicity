@@ -28,6 +28,7 @@
           <p class="index-model-do"></p>
         </div>
       </div>-->
+      <!-- {{money | currency}} -->
     </div>
     <div class="index-bot"></div>
     <Footer></Footer>
@@ -50,8 +51,17 @@
         return this.$store.state.address
       },
     },
+    // 局部过滤
+    // filters:{
+    //   currency(val){
+    //     if (val){
+    //       return `￥${val.toFixed(2)}元` // toFixed() 方法可把 Number 四舍五入为指定小数位数的数字。
+    //     }
+    //   }
+    // },
     data () {
       return {
+        // money: 77712,
         seaActive: 'search-bg', // 选择背景色
         mainList: [] // 列表数据
       }
